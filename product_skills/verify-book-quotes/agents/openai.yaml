@@ -1,0 +1,4 @@
+interface:
+  display_name: "书本金句核验"
+  short_description: "Verify exact wording attribution and source evidence for quotes"
+  default_prompt: "Use -book-quotes to verify the exact wording and attribution of these book quotes."

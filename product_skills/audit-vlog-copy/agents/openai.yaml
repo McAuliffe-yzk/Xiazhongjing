@@ -1,0 +1,4 @@
+interface:
+  display_name: "Vlog 文案审校"
+  short_description: "Audit facts personal style structure and quotation compliance"
+  default_prompt: "Use -vlog-copy to audit this Vlog draft before it is applied or published."

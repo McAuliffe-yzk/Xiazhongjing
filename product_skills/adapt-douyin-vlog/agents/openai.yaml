@@ -1,0 +1,4 @@
+interface:
+  display_name: "抖音传播适配"
+  short_description: "Review Vlog retention and spoken rhythm without clickbait"
+  default_prompt: "Use -douyin-vlog to review this Vlog draft for Douyin retention without inventing facts."

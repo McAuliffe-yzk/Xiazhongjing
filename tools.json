@@ -1,0 +1,31 @@
+{
+  "name": "xiangzhongjing",
+  "transport": "streamable-http",
+  "path": "/mcp",
+  "tools": [
+    {
+      "name": "creator_identity",
+      "description": "查看匣中镜当前启用的个人创作 DNA、版本和创作框架。"
+    },
+    {
+      "name": "parse_creation_materials",
+      "description": "把一段创作输入拆解为主题、洞察、日常、事件、开头和收束素材。"
+    },
+    {
+      "name": "generate_vlog_copy",
+      "description": "基于个人 DNA 生成完整中文 Vlog 文案，并按需要直接植入书库原句。"
+    },
+    {
+      "name": "rewrite_current_copy",
+      "description": "只基于当前文案框中的文字重写，不回读原始创作素材。"
+    },
+    {
+      "name": "insert_book_quotes",
+      "description": "从本地精神书库选择合适时机，植入逐字直接引用，不做转述。"
+    },
+    {
+      "name": "book_library_sources",
+      "description": "查看已接入的精神书库来源与当前可用素材数量。"
+    }
+  ]
+}

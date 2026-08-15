@@ -1,0 +1,4 @@
+interface:
+  display_name: "Vlog 文案编辑"
+  short_description: "Run controlled full-copy and selected-text Vlog revisions"
+  default_prompt: "Use -vlog-copy to revise this Vlog copy with a before-and-after preview."

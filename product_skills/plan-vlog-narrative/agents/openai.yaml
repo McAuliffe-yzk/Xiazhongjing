@@ -1,0 +1,4 @@
+interface:
+  display_name: "Vlog 叙事规划"
+  short_description: "Plan truthful event-led narratives before copy generation"
+  default_prompt: "Use -vlog-narrative to plan a truthful event-led Vlog narrative."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "书库支撑"
+  short_description: "Add source-backed quotes or clearly marked thought transfer"
+  default_prompt: "Use book support to add one or two natural, evidence-safe supports to this Vlog draft in my personal voice."

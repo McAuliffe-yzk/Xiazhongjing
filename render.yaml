@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: xiangzhongjing-mcp
+    runtime: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile.mcp
+    healthCheckPath: /health
+    envVars:
+      - key: MCP_HOST
+        value: 0.0.0.0
+      - key: MCP_PORT
+        value: 10000
+      - key: XIANGZHONGJING_DATA_DIR
+        value: /data
+      - key: DEEPSEEK_API_KEY
+        sync: false
+      - key: DEEPSEEK_API_BASE
+        value: https://api.deepseek.com
+    disk:
+      name: xiangzhongjing-data
+      mountPath: /data
+      sizeGB: 1

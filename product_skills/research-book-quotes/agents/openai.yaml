@@ -1,0 +1,4 @@
+interface:
+  display_name: "书本金句检索"
+  short_description: "Find exact source-backed book quotes through live search"
+  default_prompt: "Use -book-quotes to find source-backed quotes that fit this completed Vlog draft."

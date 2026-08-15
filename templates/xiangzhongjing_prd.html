@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="匣中镜 PRD v2.0：当前真实产品基线、生成契约、模块化单体架构与下一阶段路线。">
+<meta name="theme-color" content="#f7f8fc">
+<title>匣中镜产品蓝图｜PRD v2.0</title>
+<link rel="icon" href="/static/xiangzhongjing-prd-favicon.png" type="image/png">
+<link rel="stylesheet" href="/static/prd.css?v=200">
+</head>
+<body>
+<a class="skip-link" href="#prd-main">跳到产品蓝图正文</a>
+
+<div class="prd-layout">
+  <aside class="prd-sidebar" aria-label="产品蓝图导航">
+    <a class="prd-brand" href="#overview" aria-label="回到匣中镜产品蓝图顶部">
+      <span class="prd-brand-mark" aria-hidden="true">匣</span>
+      <span class="prd-brand-copy">
+        <strong>匣中镜</strong>
+        <small>产品蓝图 · PRD v2.0</small>
+      </span>
+    </a>
+
+    <div class="prd-status-card" aria-label="文档状态">
+      <div><span class="status-dot" aria-hidden="true"></span><strong>当前真实基线</strong></div>
+      <p>运行态与下一阶段路线已于 2026-08-12 对齐。</p>
+    </div>
+
+    <nav class="prd-nav" aria-label="文档目录">
+      <a class="active" href="#overview"><span>01</span>产品定义</a>
+      <a href="#blueprint"><span>02</span>功能蓝图</a>
+      <a href="#workflow"><span>03</span>创作全链路</a>
+      <a href="#contracts"><span>04</span>执行契约</a>
+      <a href="#library"><span>05</span>知识与记忆</a>
+      <a href="#architecture"><span>06</span>技术架构</a>
+      <a href="#metrics"><span>07</span>目标与指标</a>
+      <a href="#roadmap"><span>08</span>迭代路线</a>
+      <a href="#boundaries"><span>09</span>产品边界</a>
+    </nav>
+
+    <div class="prd-sidebar-footer">
+      <span>DOCUMENT OWNER</span>
+      <strong>个人创作者 · 单人创作 OS</strong>
+      <a href="/xiangzhongjing-demo">返回匣中镜工作台 <b aria-hidden="true">→</b></a>
+    </div>
+  </aside>
+
+  <main class="prd-main" id="prd-main" tabindex="-1">
+    <header class="prd-topbar">
+      <div>
+        <span class="topbar-label">PRODUCT BLUEPRINT</span>
+        <strong>当前基线 + 下一阶段路线</strong>
+      </div>
+      <div class="topbar-meta">
+        <span>v2.0</span>
+        <span>2026.08.12</span>
+        <a href="/xiangzhongjing-demo">进入产品</a>
+      </div>
+    </header>
+
+    <section class="prd-hero" id="overview" aria-labelledby="prd-title">
+      <div class="hero-copy">
+        <div class="hero-kicker"><span>PERSONAL AGENT</span><b>为一个具体的人，做一个刚好够用的 Agent</b></div>
+        <h1 id="prd-title">一个人的<br><em>创作操作系统。</em></h1>
+        <p>匣中镜服务 个人创作者真实的抖音 Vlog 创作：把历史文稿蒸馏成个人 DNA，把生活素材发展成完整叙事，让书库、对话、封面和发布记录共同形成一个持续进化的创作者 Agent。</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="/xiangzhongjing-demo">
+            <img src="/static/icons/file-pen-line.svg" width="18" height="18" alt="" aria-hidden="true">
+            打开创作工作台
+          </a>
+          <a class="button button-secondary" href="#blueprint">查看功能基线</a>
+        </div>
+      </div>
+
+      <aside class="baseline-panel" aria-label="当前运行基线">
+        <div class="baseline-head">
+          <div><span>LIVE BASELINE</span><strong>当前运行基线</strong></div>
+          <span class="live-pill"><i aria-hidden="true"></i>已对齐</span>
+        </div>
+        <dl class="baseline-list">
+          <div><dt>个人创作 Skill</dt><dd>v2.2 已发布</dd></div>
+          <div><dt>稳定回退基线</dt><dd>v2.1 保留</dd></div>
+          <div><dt>主生成链路</dt><dd>3 个必要 Skill</dd></div>
+          <div><dt>产品形态</dt><dd>模块化单体</dd></div>
+        </dl>
+        <div class="baseline-metrics">
+          <div><strong>13</strong><span>功能目的地</span></div>
+          <div><strong>11</strong><span>历史文稿记忆</span></div>
+          <div><strong>243</strong><span>可用书库直引</span></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="value-strip" aria-label="产品价值主张">
+      <article data-tone="red"><span>01</span><strong>更像本人</strong><p>复现叙事方法与思考运动，不只模仿口头禅。</p></article>
+      <article data-tone="blue"><span>02</span><strong>更快发稿</strong><p>素材、生成、书库、封面和发布位于同一条路径。</p></article>
+      <article data-tone="yellow"><span>03</span><strong>越用越懂</strong><p>真实发布结果反向校准个人 Skill，而非靠一次评分。</p></article>
+    </section>
+
+    <section class="prd-section" id="blueprint" aria-labelledby="blueprint-title">
+      <div class="section-heading">
+        <div><span>02 / PRODUCT MAP</span><h2 id="blueprint-title">功能蓝图</h2></div>
+        <p>十三个目的地被收进四个领域；当前状态、用户价值和关键边界均来自真实实现。</p>
+      </div>
+
+      <div class="domain-legend" aria-label="功能领域">
+        <span data-domain="creation">创作生产</span>
+        <span data-domain="intelligence">创作者智能</span>
+        <span data-domain="knowledge">思考与知识</span>
+        <span data-domain="identity">身份与视觉</span>
+      </div>
+
+      <div class="module-explorer">
+        <div class="module-tabs" role="tablist" aria-label="选择产品模块">
+          <button class="active" id="module-tab-workspace" type="button" role="tab" aria-selected="true" aria-controls="module-detail" data-module="workspace" data-domain="creation"><span>创作台</span><small>项目入口</small></button>
+          <button id="module-tab-editor" type="button" role="tab" aria-selected="false" aria-controls="module-detail" data-module="editor" data-domain="creation"><span>当前项目</span><small>素材与成稿</small></button>
+          <button id="module-tab-inspiration" type="button" role="tab" aria-selected="false" aria-controls="module-detail" data-module="inspiration" data-domain="creation"><span>灵感匣签</span><small>每日一次</small></button>
+          <button id="module-tab-diary" type="button" role="tab" aria-selected="false" aria-controls="module-detail" data-module="diary" data-domain="creation"><span>日记本</span><small>发布归档</small></button>
+          <button id="module-tab-distill" type="button" role="tab" aria-selected="false" aria-controls="module-detail" data-module="distill" data-domain="intelligence"><span>内容蒸馏</span><small>个人 DNA</small></button>
+          <button id="module-tab-dna" type="button" role="tab" aria-selected="false" aria-controls="module-detail" data-module="dna" data-domain="intelligence"><span>DNA 试剂</span><small>可选风味</small></button>
+          <button id="module-tab-settings" type="button" role="tab" aria-selected="false" aria-controls="module-detail" data-module="settings" data-domain="intelligence"><span>设置</span><small>模型与 Skill</small></button>
+          <button id="module-tab-library" type="button" role="tab" aria-selected="false" aria-controls="module-detail" data-module="library" data-domain="knowledge"><span>精神书库</span><small>质量分层</small></button>
+          <button id="module-tab-mirror" type="button" role="tab" aria-selected="false" aria-controls="module-detail" data-module="mirror" data-domain="knowledge"><span>镜中人</span><small>与自己交流</small></button>
+          <button id="module-tab-book" type="button" role="tab" aria-selected="false" aria-controls="module-detail" data-module="book" data-domain="knowledge"><span>书中人</span><small>四位人格</small></button>
+          <button id="module-tab-assets" type="button" role="tab" aria-selected="false" aria-controls="module-detail" data-module="assets" data-domain="knowledge"><span>资产库</span><small>对话沉淀</small></button>
+          <button id="module-tab-profile" type="button" role="tab" aria-selected="false" aria-controls="module-detail" data-module="profile" data-domain="identity"><span>个人信息</span><small>创作者身份</small></button>
+          <button id="module-tab-covers" type="button" role="tab" aria-selected="false" aria-controls="module-detail" data-module="covers" data-domain="identity"><span>封面图</span><small>生成与资产</small></button>
+        </div>
+        <article class="module-detail" id="module-detail" role="tabpanel" aria-live="polite" aria-labelledby="module-tab-workspace"></article>
+      </div>
+    </section>
+
+    <section class="prd-section" id="workflow" aria-labelledby="workflow-title">
+      <div class="section-heading">
+        <div><span>03 / CREATION FLOW</span><h2 id="workflow-title">从生活素材到正式发布</h2></div>
+        <p>主路径保持短而可控；思考、知识和视觉资产在需要时进入，不劫持正文创作。</p>
+      </div>
+
+      <ol class="workflow-track">
+        <li><span>01</span><div><strong>准备素材</strong><p>主题、开场、洞察、日常、事件、原句、收束意象。</p></div></li>
+        <li><span>02</span><div><strong>个人风格撰写</strong><p>以 v2.2 DNA 发展素材关系，建立完整叙事运动。</p></div></li>
+        <li><span>03</span><div><strong>抖音表达优化</strong><p>优化开头、口语节奏、高潮与回扣，不改成模板文。</p></div></li>
+        <li><span>04</span><div><strong>书库金句支撑</strong><p>从本地有效直引中匹配真实转念时机。</p></div></li>
+        <li><span>05</span><div><strong>人工精修</strong><p>改写只认当前编辑器正文，支持锁定、版本和长度硬约束。</p></div></li>
+        <li><span>06</span><div><strong>封面与发布</strong><p>生成栏目封面，发布到日记，并无负担记录真实采用结果。</p></div></li>
+      </ol>
+
+      <div class="workflow-note">
+        <span class="note-icon"><img src="/static/icons/messages-square.svg" width="22" height="22" alt="" aria-hidden="true"></span>
+        <div><strong>对话是独立的思考空间</strong><p>镜中人、书中人产生的内容只有在用户主动沉淀后才进入资产库；不会自动改写当前项目。</p></div>
+      </div>
+    </section>
+
+    <section class="prd-section" id="contracts" aria-labelledby="contracts-title">
+      <div class="section-heading">
+        <div><span>04 / EXECUTION CONTRACT</span><h2 id="contracts-title">不是“按钮存在”，而是执行有约束</h2></div>
+        <p>以下契约定义每个生成选项在真实链路中的输入、行为和失败边界。</p>
+      </div>
+
+      <div class="contract-workbench">
+        <div class="contract-tabs" role="tablist" aria-label="选择执行契约">
+          <button class="active" id="contract-tab-generation" type="button" role="tab" aria-selected="true" aria-controls="contract-detail" data-contract="generation">新写</button>
+          <button id="contract-tab-rewrite" type="button" role="tab" aria-selected="false" aria-controls="contract-detail" data-contract="rewrite">改写当前稿</button>
+          <button id="contract-tab-length" type="button" role="tab" aria-selected="false" aria-controls="contract-detail" data-contract="length">字数</button>
+          <button id="contract-tab-narrative" type="button" role="tab" aria-selected="false" aria-controls="contract-detail" data-contract="narrative">叙事模式</button>
+          <button id="contract-tab-quotes" type="button" role="tab" aria-selected="false" aria-controls="contract-detail" data-contract="quotes">书库金句</button>
+          <button id="contract-tab-dialogue" type="button" role="tab" aria-selected="false" aria-controls="contract-detail" data-contract="dialogue">对话沉淀</button>
+        </div>
+        <article class="contract-detail" id="contract-detail" role="tabpanel" aria-live="polite" aria-labelledby="contract-tab-generation"></article>
+      </div>
+
+      <div class="expression-boundaries" aria-labelledby="expression-title">
+        <div class="mini-heading"><span>MATERIAL BOUNDARIES</span><h3 id="expression-title">三种素材表达边界</h3></div>
+        <div class="boundary-grid">
+          <article><span>01</span><strong>原句</strong><p>逐字保留，仅调整位置与前后过渡。</p><small>真实对话、日期、专有表达</small></article>
+          <article class="featured"><span>02 · 默认</span><strong>改写</strong><p>保留事实和含义，按个人 DNA 重建句法与叙事关系。</p><small>绝大多数生活素材和核心事件</small></article>
+          <article><span>03</span><strong>阐释</strong><p>先保留原句，再用当前事实或个人判断展开。</p><small>需要被听懂的重要洞察</small></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="prd-section" id="library" aria-labelledby="library-title">
+      <div class="section-heading">
+        <div><span>05 / KNOWLEDGE & MEMORY</span><h2 id="library-title">知识不是堆积，而是带质量门的个人记忆</h2></div>
+        <p>书库只向生成提供通过质量门的直接引文；镜中人则使用压缩后的历史文稿记忆，不搬运历史事实。</p>
+      </div>
+
+      <div class="knowledge-layout">
+        <article class="library-audit">
+          <div class="panel-title"><div><span>LIBRARY AUDIT</span><h3>三本书质量基线</h3></div><strong>2026.08.12</strong></div>
+          <div class="audit-total"><strong>548</strong><span>总素材</span><i></i><strong>243</strong><span>生成可用直引</span></div>
+          <div class="audit-table" role="table" aria-label="三本书素材审计结果">
+            <div class="audit-row audit-head" role="row"><span role="columnheader">书籍</span><span role="columnheader">总数</span><span role="columnheader">可用</span><span role="columnheader">隔离</span></div>
+            <div class="audit-row" role="row"><strong role="cell">《剑来》</strong><span role="cell">114</span><b role="cell">76</b><span role="cell">0</span></div>
+            <div class="audit-row" role="row"><strong role="cell">《埃隆·马斯克传》</strong><span role="cell">320</span><b role="cell">63</b><span role="cell">26</span></div>
+            <div class="audit-row" role="row"><strong role="cell">《道德经》</strong><span role="cell">114</span><b role="cell">104</b><span role="cell">8</span></div>
+          </div>
+          <p class="audit-rule"><code>material_type = direct_quote</code> + <code>quality_status = valid</code> 才能进入文案生成。隔离记录保留查看，不删除原始资料。</p>
+        </article>
+
+        <article class="memory-stack">
+          <div class="panel-title"><div><span>MIRROR MEMORY</span><h3>镜中人四层上下文</h3></div><strong>11 篇</strong></div>
+          <ol>
+            <li><span>01</span><div><strong>当前发布 Skill</strong><p>v2.2 的叙事、语言和价值表达规则。</p></div></li>
+            <li><span>02</span><div><strong>历史文稿记忆包</strong><p>文件名、成熟度、稳定证据、优势与叙事模式。</p></div></li>
+            <li><span>03</span><div><strong>全局人设资产</strong><p>用户从真实对话中主动确认并沉淀的内容。</p></div></li>
+            <li><span>04</span><div><strong>会话长短期记忆</strong><p>当前会话摘要与最近消息，维持连续交流。</p></div></li>
+          </ol>
+          <div class="memory-guard">历史文稿提供“我如何表达与思考”，不向当前对话迁移旧项目事实。</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="prd-section" id="architecture" aria-labelledby="architecture-title">
+      <div class="section-heading">
+        <div><span>06 / MODULAR MONOLITH</span><h2 id="architecture-title">可演进的模块化单体</h2></div>
+        <p>当前不拆微服务；先把页面、用例、领域服务和数据边界分清，让真实创作链路可维护、可测试、可交付。</p>
+      </div>
+
+      <div class="architecture-stack" aria-label="匣中镜技术架构">
+        <div class="architecture-layer" data-layer="ui"><span>01 · EXPERIENCE</span><strong>Vanilla HTML / CSS / JavaScript</strong><p>单页壳、领域脚本、URL 状态、加载与错误反馈</p></div>
+        <div class="architecture-connector" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="architecture-layer" data-layer="api"><span>02 · APPLICATION</span><strong>FastAPI Router + Use Case</strong><p>generation · state · style · library · dialogue · dna · covers · settings</p></div>
+        <div class="architecture-connector" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="architecture-layer" data-layer="domain"><span>03 · DOMAIN</span><strong>Skill Runtime + Domain Services</strong><p>个人写作 · 书库质量 · 对话记忆 · 封面服务 · 任务检查点</p></div>
+        <div class="architecture-connector" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="architecture-layer" data-layer="data"><span>04 · DATA & MODEL</span><strong>SQLite + Local Media + Model APIs</strong><p>本地优先持久化 · DeepSeek · Image API · 可选搜索增强</p></div>
+      </div>
+
+      <div class="architecture-principles">
+        <article><span>A</span><strong>失败不覆盖</strong><p>字数、锁定段落或任务契约失败时保留用户当前稿。</p></article>
+        <article><span>B</span><strong>检查点恢复</strong><p>生成任务保存输入指纹与阶段结果，重试复用已完成工作。</p></article>
+        <article><span>C</span><strong>密钥隔离</strong><p>API Key 不进入模板、文档、Git、数据库导出和交付包。</p></article>
+        <article><span>D</span><strong>数据归属清楚</strong><p>项目、对话、书库、封面和发布快照各自拥有明确边界。</p></article>
+      </div>
+    </section>
+
+    <section class="prd-section" id="metrics" aria-labelledby="metrics-title">
+      <div class="section-heading">
+        <div><span>07 / PROOF</span><h2 id="metrics-title">证明“更像本人、更快发稿”</h2></div>
+        <p>不新增人工打分负担；从真实发布动作自动获得质量证据。</p>
+      </div>
+
+      <div class="north-star">
+        <div class="north-star-copy"><span>NORTH STAR</span><h3>连续真实项目中的本人感与发稿效率</h3><p>每个项目只记一次，3 个项目形成方向判断，5 个项目冻结一轮观察。</p></div>
+        <div class="metric-grid">
+          <article><span>01</span><strong>重生成次数</strong><p>是否需要反复抽卡才能得到可用稿。</p></article>
+          <article><span>02</span><strong>编辑距离</strong><p>最后一版 AI 稿到最终发布稿改了多少。</p></article>
+          <article><span>03</span><strong>创作耗时</strong><p>首次生成开始到正式发布的真实时间。</p></article>
+          <article><span>04</span><strong>最终采用</strong><p>直接、小改、大改采用，或无 AI 基线。</p></article>
+        </div>
+      </div>
+
+      <div class="metric-targets" aria-label="本轮目标">
+        <div><span>编辑距离中位数</span><strong>≤ 20%</strong></div>
+        <div><span>平均重生成</span><strong>≤ 1.5 次</strong></div>
+        <div><span>手动字数契约</span><strong>100%</strong></div>
+        <div><span>生成可用引文</span><strong>100% 过质量门</strong></div>
+      </div>
+    </section>
+
+    <section class="prd-section" id="roadmap" aria-labelledby="roadmap-title">
+      <div class="section-heading">
+        <div><span>08 / ROADMAP</span><h2 id="roadmap-title">下一阶段只推进能证明核心价值的事</h2></div>
+        <p>路线从生成可靠性开始，经过个人反馈闭环和发布表达系统，最后才进入有限线上化。</p>
+      </div>
+
+      <div class="roadmap-list">
+        <article class="roadmap-item active">
+          <div class="roadmap-priority"><span>P0</span><i>NOW</i></div>
+          <div><h3>生成质量与可靠性基线</h3><p>建立“回忆”等真实项目回归样例；统一错误码、超时、检查点恢复、字数与书库质量检查。</p></div>
+          <ul><li>5 个真实项目无数据丢失</li><li>失败可解释、可恢复</li><li>成功稿满足硬契约</li></ul>
+        </article>
+        <article class="roadmap-item">
+          <div class="roadmap-priority"><span>P1</span><i>NEXT</i></div>
+          <div><h3>无负担个人反馈闭环</h3><p>把发布结果与 Skill 版本关联，聚合重生成、编辑距离、耗时和采用情况，不让用户填额外表单。</p></div>
+          <ul><li>v2.1 / v2.2 真实项目对照</li><li>高频人工修改归因</li><li>候选规则由用户发布</li></ul>
+        </article>
+        <article class="roadmap-item">
+          <div class="roadmap-priority"><span>P1</span><i>NEXT</i></div>
+          <div><h3>发布表达系统</h3><p>把抖音发布适配做成可选择面板，建立栏目级封面预设，并打通项目、发布稿、封面和日记。</p></div>
+          <ul><li>正文到发布不超过 3 个主动作</li><li>栏目视觉稳定复现</li><li>资产可追溯</li></ul>
+        </article>
+        <article class="roadmap-item muted">
+          <div class="roadmap-priority"><span>P2</span><i>LATER</i></div>
+          <div><h3>私密分享与有限线上化</h3><p>先支持邀请制和只读展示，再考虑公共产品；补齐鉴权、Secret 托管、数据隔离、备份和用量保护。</p></div>
+          <ul><li>局部好友授权访问</li><li>私人数据不可见</li><li>不提前做公共 SaaS</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="prd-section" id="boundaries" aria-labelledby="boundaries-title">
+      <div class="section-heading">
+        <div><span>09 / BOUNDARIES</span><h2 id="boundaries-title">克制，才让 Personal Agent 成立</h2></div>
+        <p>边界不是缺少功能，而是防止产品偏离一个人的真实创作问题。</p>
+      </div>
+
+      <div class="scope-board">
+        <article class="scope-yes"><span>IN SCOPE</span><h3>当前必须做好</h3><ul><li>像创作者本人的完整 Vlog 文案</li><li>稳定素材、生成、编辑和发布链路</li><li>本地直引和对话记忆</li><li>封面与真实作品资产</li><li>可回退的个人 Skill 版本</li></ul></article>
+        <article class="scope-no"><span>NOT NOW</span><h3>当前明确不做</h3><ul><li>多人协作与商业化后台</li><li>模板市场与公开社区</li><li>自动发布和视频成片</li><li>书籍全文托管</li><li>无授权的公共数字分身</li></ul></article>
+      </div>
+    </section>
+
+    <footer class="prd-footer">
+      <div><span class="prd-brand-mark small" aria-hidden="true">匣</span><div><strong>匣中镜产品蓝图</strong><p>PRD v2.0 · 2026-08-12 · 当前真实产品基线</p></div></div>
+      <a class="button button-primary" href="/xiangzhongjing-demo">回到产品 <b aria-hidden="true">→</b></a>
+    </footer>
+  </main>
+</div>
+
+<script src="/static/prd.js?v=200"></script>
+</body>
+</html>

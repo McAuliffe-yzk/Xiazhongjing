@@ -1,0 +1,4 @@
+interface:
+  display_name: "剪贴板素材识别"
+  short_description: "Parse pasted creator notes into structured Vlog project materials"
+  default_prompt: "Use -creation-materials to parse these pasted notes into Xiangzhongjing project materials."

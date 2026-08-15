@@ -1,0 +1,4 @@
+interface:
+  display_name: "个人风格蒸馏"
+  short_description: "从历史文稿提炼可发布、可回滚的个人写作风格 Skill"
+  default_prompt: "Use -personal-style to distill these historical Vlog drafts into a versioned personal style skill."

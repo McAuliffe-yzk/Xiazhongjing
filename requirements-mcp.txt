@@ -1,0 +1,3 @@
+-r requirements.txt
+mcp[cli]>=1.9,<2
+httpx>=0.27,<1

@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#edf0e9">
+  <meta name="description" content="匣中镜 AI Vlogger Studio 模块化单体迭代后的产品评估、证据路线与技术架构。">
+  <title>匣中镜·产品评估与战略路线</title>
+  <link rel="icon" href="/static/xiangzhongjing-prd-favicon.png" type="image/png">
+  <link rel="stylesheet" href="/static/evaluation.css?v=20260808b">
+</head>
+<body>
+  <a class="skip-link" href="#evaluation-main">跳到评估正文</a>
+
+  <header class="evaluation-header">
+    <a class="evaluation-brand" href="/xiangzhongjing-demo" aria-label="返回匣中镜产品">
+      <span class="brand-seal" aria-hidden="true">匣</span>
+      <span><strong>匣中镜</strong><small>PRODUCT REVIEW / 2026</small></span>
+    </a>
+    <nav class="evaluation-nav" aria-label="评估章节">
+      <a href="#positioning">定位</a>
+      <a href="#dimensions">四维评估</a>
+      <a href="#strategy">战略选择</a>
+      <a href="#roadmap">迭代路线</a>
+      <a href="#architecture">技术架构</a>
+    </nav>
+    <div class="header-actions">
+      <span class="review-date">2026.08.08</span>
+      <button class="print-action" id="print-review" type="button">打印评估</button>
+      <a class="return-action" href="/xiangzhongjing-demo">返回产品</a>
+    </div>
+  </header>
+
+  <div class="reading-progress" aria-hidden="true"><span id="reading-progress-bar"></span></div>
+
+  <main id="evaluation-main">
+    <section class="executive-brief" id="positioning" aria-labelledby="review-title">
+      <div class="brief-copy">
+        <span class="section-index">00 / EXECUTIVE REVIEW</span>
+        <h1 id="review-title">匣中镜产品评估<br><em>从单体 Demo 到模块化创作系统</em></h1>
+        <p class="brief-lead">工程已完成模块化单体的第一阶段。下一阶段不再横向增加功能，而是用 3-5 个真实项目证明“被蒸馏出来的我”能稳定地比通用模型更像本人、更快发稿。</p>
+        <div class="brief-verdict">
+          <span>阶段判定</span>
+          <strong>模块化单体 / 单用户证据积累期</strong>
+        </div>
+      </div>
+      <aside class="score-overview" aria-label="综合评分">
+        <div class="overall-score"><strong>7.3</strong><span>/ 10</span></div>
+        <p>工程承载基线已成立，产品价值仍需真实项目证明。</p>
+        <dl class="score-list">
+          <div><dt>用户体验</dt><dd><span style="--score:70%"></span><b>7.0</b></dd></div>
+          <div><dt>UI 美学</dt><dd><span style="--score:75%"></span><b>7.5</b></dd></div>
+          <div><dt>功能价值</dt><dd><span style="--score:73%"></span><b>7.3</b></dd></div>
+          <div><dt>技术架构</dt><dd><span style="--score:74%"></span><b>7.4</b></dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="evidence-band" aria-label="当前产品数据基线">
+      <div><strong>7</strong><span>活跃项目</span></div>
+      <div><strong>11</strong><span>篇历史语料</span></div>
+      <div><strong>173</strong><span>条书库素材</span></div>
+      <div><strong>64%</strong><span>历史生成成功率</span></div>
+      <div><strong>24s</strong><span>核心写作平均耗时</span></div>
+      <div><strong>98</strong><span>项自动化测试通过</span></div>
+    </section>
+
+    <section class="position-statement report-section" aria-labelledby="position-title">
+      <div class="section-heading">
+        <span class="section-index">01 / POSITION</span>
+        <div>
+          <h2 id="position-title">产品定位不是“AI 写作”</h2>
+          <p>一个只会生成文案的工具没有护城河；一个能持续学会个人表达的创作系统才有。</p>
+        </div>
+      </div>
+      <div class="position-grid">
+        <div class="position-core">
+          <span class="signal-label">当前最强价值</span>
+          <h3>个人创作 DNA 的可执行化</h3>
+          <p>历史文稿不再只是被召回的片段，而是被沉淀为可版本化的写作 Skill，与真实素材、书库和编辑行为共同形成个人创作系统。</p>
+        </div>
+        <div class="position-boundary">
+          <span class="signal-label">现阶段不是什么</span>
+          <ul class="plain-list">
+            <li>不是通用文案生成器</li>
+            <li>不是多平台内容运营中台</li>
+            <li>不是创作者数字分身平台</li>
+            <li>不是视频拍摄与剪辑工具</li>
+          </ul>
+        </div>
+        <div class="position-north-star">
+          <span class="signal-label">北极星指标</span>
+          <strong>30 分钟内产出可发布稿件的项目比例</strong>
+          <p>这个指标同时约束风格质量、生成速度、交互成本和稳定性。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="report-section dimensions-section" id="dimensions" aria-labelledby="dimensions-title">
+      <div class="section-heading">
+        <span class="section-index">02 / FOUR DIMENSIONS</span>
+        <div>
+          <h2 id="dimensions-title">四维深度评估</h2>
+          <p>评分衡量“当前阶段是否支撑真实高频使用”，不衡量功能数量。</p>
+        </div>
+      </div>
+
+      <article class="dimension-row" id="ux-review">
+        <header>
+          <span class="dimension-number">A</span>
+          <div><h3>用户体验与交互</h3><p>核心闭环与移动导航已经成立，生成任务的可控性仍是主要断点。</p></div>
+          <strong class="dimension-score">7.0</strong>
+        </header>
+        <div class="dimension-columns">
+          <section><h4>已成立</h4><ul><li>项目到发布的完整链路</li><li>移动端为 4 个核心入口 + 更多</li><li>“发布到日记”的动作语义明确</li><li>保存串行化且冲突可感知</li></ul></section>
+          <section><h4>关键断点</h4><ul><li><b>P0</b> 生成任务仍缺少用户取消</li><li><b>P0</b> 生成失败率尚未用新基线重测</li><li><b>P1</b> 对话资产对发稿的帮助尚未证明</li><li><b>P1</b> 移动端需持续做固定回归</li></ul></section>
+          <section><h4>迭代动作</h4><ul><li>优先完成 3-5 个真实项目</li><li>增加取消与定向重试</li><li>记录重生成、编辑距离与发布耗时</li><li>维持桌面/移动核心链路回归</li></ul></section>
+        </div>
+      </article>
+
+      <article class="dimension-row" id="visual-review">
+        <header>
+          <span class="dimension-number">B</span>
+          <div><h3>UI 视觉与设计美学</h3><p>品牌气质与工作密度开始统一，核心操作的视觉一致性明显提升。</p></div>
+          <strong class="dimension-score">7.5</strong>
+        </header>
+        <div class="dimension-columns">
+          <section><h4>已成立</h4><ul><li>宣纸、墨色、玉绿和朱红形成品牌识别</li><li>编辑器、书库和日记本隐喻统一</li><li>圆角、阴影与卡片层级基本克制</li><li>已具备焦点和减少动效支持</li></ul></section>
+          <section><h4>关键断点</h4><ul><li><b>P1</b> 少数旧组件仍有独立样式逻辑</li><li><b>P1</b> 部分辅助文字需持续核对对比度</li><li><b>P1</b> 空状态与稠密工作态的节奏尚未完全统一</li><li><b>P2</b> 尚未建立截图基线</li></ul></section>
+          <section><h4>迭代动作</h4><ul><li>将 8 px 间距与 44 px 触控纳入回归</li><li>继续清理旧组件的局部覆盖</li><li>固定 1440 px 与 390 px 视觉验收</li><li>保留水墨 DNA 品牌，不做视觉换肤</li></ul></section>
+        </div>
+      </article>
+
+      <article class="dimension-row" id="value-review">
+        <header>
+          <span class="dimension-number">C</span>
+          <div><h3>功能价值与信息呈现</h3><p>核心差异化有价值，但当前仍用功能状态代替了用户结果。</p></div>
+          <strong class="dimension-score">7.3</strong>
+        </header>
+        <div class="dimension-columns">
+          <section><h4>已成立</h4><ul><li>写作 Skill 而非旧稿片段拼接</li><li>“原句/改写/阐释”建立明确表达边界</li><li>书库引用已进入生成主链</li><li>风格版本与发布日记具备长期复利</li></ul></section>
+          <section><h4>关键断点</h4><ul><li><b>P0</b> 没有首稿采用率与编辑距离</li><li><b>P0</b> 历史生成成功率仅 64%</li><li><b>P1</b> v2.1 含 92 条规则，存在指令过载</li><li><b>P1</b> 对话功能尚未证明对发稿贡献</li></ul></section>
+          <section><h4>迭代动作</h4><ul><li>建立“采用/小改/重写/放弃”反馈闭环</li><li>将 92 条规则压缩为 DNA 核心与场景策略</li><li>建立 20-30 个固定回归题目</li><li>以对话资产复用率决定探索功能投入</li></ul></section>
+        </div>
+      </article>
+
+      <article class="dimension-row" id="tech-review">
+        <header>
+          <span class="dimension-number">D</span>
+          <div><h3>代码架构与技术框架</h3><p>已从单文件 Demo 进入模块化单体，保留本地单人产品的低运维成本。</p></div>
+          <strong class="dimension-score">7.4</strong>
+        </header>
+        <div class="dimension-columns">
+          <section><h4>已成立</h4><ul><li>`main.py` 缩减为 52 行应用组装</li><li>6 个 API 边界 + 3 个应用服务</li><li>8 个 JS 与 10 个 CSS 模块</li><li>98 项测试 + Pydantic 核心契约</li></ul></section>
+          <section><h4>剩余风险</h4><ul><li><b>P1</b> DeepSeek 兼容引擎仍然较大</li><li><b>P1</b> 全局 JSON 已有 revision，但未完全结构化</li><li><b>P1</b> 生成请求断开后的底层取消尚需完善</li><li><b>P2</b> 缺少持续视觉回归</li></ul></section>
+          <section><h4>迭代动作</h4><ul><li>按生成、编辑、蒸馏逐步内聚 AI 引擎</li><li>仅在真实数据增长时拆分状态表</li><li>建立可取消的生成任务语义</li><li>不引入 React、微服务或队列</li></ul></section>
+        </div>
+      </article>
+    </section>
+
+    <section class="report-section measurement-section" aria-labelledby="measurement-title">
+      <div class="section-heading">
+        <span class="section-index">03 / MEASUREMENT</span>
+        <div>
+          <h2 id="measurement-title">从“Skill 跑完了”转向“用户发稿了”</h2>
+          <p>技术运行指标只能说明系统没有停下，不能说明产品产生了价值。</p>
+        </div>
+      </div>
+      <div class="metric-tree">
+        <div class="north-star-cell">
+          <span>北极星</span>
+          <strong>30 分钟可发布率</strong>
+          <small>创建项目 -> 日记本入册</small>
+        </div>
+        <div class="metric-branch">
+          <span>质量</span>
+          <strong>首稿采用率 >= 70%</strong>
+          <small>采用 / 小改 / 重写 / 放弃</small>
+        </div>
+        <div class="metric-branch">
+          <span>效率</span>
+          <strong>P95 生成 <= 90s</strong>
+          <small>生成、编辑、发布分段耗时</small>
+        </div>
+        <div class="metric-branch">
+          <span>个人性</span>
+          <strong>像我评分 >= 4/5</strong>
+          <small>人工评分优先于模型自评</small>
+        </div>
+        <div class="metric-branch">
+          <span>可靠性</span>
+          <strong>生成成功率 >= 95%</strong>
+          <small>排除用户主动取消</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="report-section strategy-section" id="strategy" aria-labelledby="strategy-title">
+      <div class="section-heading">
+        <span class="section-index">04 / STRATEGIC CHOICE</span>
+        <div>
+          <h2 id="strategy-title">三条路线，只有一条应该现在重投</h2>
+          <p>战略的作用不是表达想象力，而是给开发顺序建立约束。</p>
+        </div>
+      </div>
+      <div class="strategy-switch" role="tablist" aria-label="战略路线">
+        <button class="active" id="strategy-tab-a" type="button" role="tab" aria-selected="true" aria-controls="strategy-detail" data-strategy="a">A · 单人创作 OS</button>
+        <button id="strategy-tab-b" type="button" role="tab" aria-selected="false" aria-controls="strategy-detail" data-strategy="b">B · 垂直创作工具</button>
+        <button id="strategy-tab-c" type="button" role="tab" aria-selected="false" aria-controls="strategy-detail" data-strategy="c">C · 数字分身平台</button>
+      </div>
+      <div class="strategy-detail" id="strategy-detail" role="tabpanel" aria-live="polite"></div>
+      <div class="investment-mix" aria-label="当前投入建议">
+        <span>当前投入建议</span>
+        <div class="investment-bar"><i class="mix-a" style="--mix:80%">A 80%</i><i class="mix-b" style="--mix:15%">B 15%</i><i class="mix-c" style="--mix:5%" aria-label="C 路线 5%"></i></div>
+      </div>
+    </section>
+
+    <section class="report-section roadmap-section" id="roadmap" aria-labelledby="roadmap-title">
+      <div class="section-heading">
+        <span class="section-index">05 / ROADMAP</span>
+        <div>
+          <h2 id="roadmap-title">16 周迭代路线</h2>
+          <p>每个阶段都有可被验收的出阶条件，不以“开发完成”作为产品完成。</p>
+        </div>
+      </div>
+      <div class="roadmap-filter" role="group" aria-label="路线优先级">
+        <button class="active" type="button" data-roadmap-filter="all">全部</button>
+        <button type="button" data-roadmap-filter="product">产品</button>
+        <button type="button" data-roadmap-filter="design">体验</button>
+        <button type="button" data-roadmap-filter="engineering">工程</button>
+      </div>
+      <div class="roadmap-list">
+        <article class="roadmap-phase" data-roadmap-tags="product design engineering">
+          <div class="phase-time"><strong>P0</strong><span>1-2 周</span></div>
+          <div class="phase-main"><h3>可靠性与测量</h3><p>先修好生成任务、移动核心流程、本地隐私边界，再建立可度量的用户结果。</p></div>
+          <div class="phase-deliverables"><span>成功率事件</span><span>采用反馈</span><span>移动导航</span><span>任务状态机</span></div>
+          <div class="phase-gate"><span>出阶条件</span><strong>20 次连续生成 >= 95%</strong></div>
+        </article>
+        <article class="roadmap-phase" data-roadmap-tags="product engineering">
+          <div class="phase-time"><strong>P1</strong><span>3-6 周</span></div>
+          <div class="phase-main"><h3>核心创作质量</h3><p>压缩个人 DNA 规则，建立固定回归集和真实编辑数据，让 Skill 迭代可比较。</p></div>
+          <div class="phase-deliverables"><span>DNA 核心层</span><span>回归题集</span><span>编辑距离</span><span>书库保留率</span></div>
+          <div class="phase-gate"><span>出阶条件</span><strong>30 项目首稿采用 >= 70%</strong></div>
+        </article>
+        <article class="roadmap-phase" data-roadmap-tags="design engineering">
+          <div class="phase-time"><strong>P2</strong><span>7-10 周</span></div>
+          <div class="phase-main"><h3>模块化单体深化</h3><p>基线拆分已完成；之后只围绕真实项目中暴露的维护成本继续拆分。</p></div>
+          <div class="phase-deliverables"><span>前端模块 ✓</span><span>类型化 API ✓</span><span>并发保存 ✓</span><span>AI 引擎逐步内聚</span></div>
+          <div class="phase-gate"><span>出阶条件</span><strong>核心链路无高频回归</strong></div>
+        </article>
+        <article class="roadmap-phase" data-roadmap-tags="product engineering">
+          <div class="phase-time"><strong>P3</strong><span>11-16 周</span></div>
+          <div class="phase-main"><h3>线上化</h3><p>引入账号、权限、托管数据和任务基础设施，只开放已验证的垂直创作链路。</p></div>
+          <div class="phase-deliverables"><span>账号权限</span><span>Secret 管理</span><span>托管数据</span><span>可观测性</span></div>
+          <div class="phase-gate"><span>出阶条件</span><strong>窄人群周留存 >= 40%</strong></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="report-section architecture-section" id="architecture" aria-labelledby="architecture-title">
+      <div class="section-heading">
+        <span class="section-index">06 / TECHNICAL SYSTEM</span>
+        <div>
+          <h2 id="architecture-title">技术支撑体系</h2>
+          <p>模块边界已建立；下一步是让架构服务于真实创作证据，而不是追求微服务或技术换栈。</p>
+        </div>
+      </div>
+      <div class="architecture-switch" role="tablist" aria-label="技术架构视图">
+        <button class="active" id="architecture-tab-current" type="button" role="tab" aria-selected="true" aria-controls="architecture-panel" data-architecture="current">已落地架构</button>
+        <button id="architecture-tab-target" type="button" role="tab" aria-selected="false" aria-controls="architecture-panel" data-architecture="target">后续演进边界</button>
+      </div>
+      <div class="architecture-panel" id="architecture-panel" role="tabpanel" aria-live="polite"></div>
+    </section>
+
+    <section class="report-section priority-section" aria-labelledby="priority-title">
+      <div class="section-heading">
+        <span class="section-index">07 / PRIORITY BOARD</span>
+        <div>
+          <h2 id="priority-title">建议立即进入 Backlog 的任务</h2>
+          <p>按用户价值、失败风险和架构放大效应排序。</p>
+        </div>
+      </div>
+      <div class="priority-table-wrap">
+        <table class="priority-table">
+          <thead><tr><th scope="col">优先级</th><th scope="col">任务</th><th scope="col">直接价值</th><th scope="col">验收指标</th><th scope="col">建议周期</th></tr></thead>
+          <tbody>
+            <tr><td><span class="priority-tag p0">P0</span></td><td>3-5 个真实项目无感记录</td><td>用真实发稿验证产品价值</td><td>重生成、编辑距离、耗时、采用齐全</td><td>随真实创作</td></tr>
+            <tr><td><span class="priority-tag p0">P0</span></td><td>生成可靠性新基线</td><td>恢复用户对核心功能的信任</td><td>20 次连续成功率 >= 95%</td><td>3-5 天</td></tr>
+            <tr><td><span class="priority-tag p0">P0</span></td><td>v2.1 / v2.2 实证对比</td><td>防止 Skill 精简导致风格变味</td><td>第 5 个项目后人工审核，v2.1 始终可回退</td><td>样本齐备后</td></tr>
+            <tr><td><span class="priority-tag p1">P1</span></td><td>生成取消与定向重试</td><td>降低长任务卡顿与重跑成本</td><td>可取消当前任务，只重试失败阶段</td><td>3-5 天</td></tr>
+            <tr><td><span class="priority-tag p1">P1</span></td><td>DeepSeek 引擎按领域内聚</td><td>降低写作与对话之间的回归风险</td><td>生成/编辑/蒸馏可独立测试</td><td>1-2 周</td></tr>
+            <tr><td><span class="priority-tag p1">P1</span></td><td>固定视觉回归</td><td>防止高频 UI 迭代破坏核心链路</td><td>1440 px / 390 px 无溢出、遮挡与点击失效</td><td>2-3 天</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="decision-close" aria-labelledby="decision-title">
+      <span class="section-index">FINAL DECISION</span>
+      <h2 id="decision-title">先证明“像我”，再证明“像每一个人”。</h2>
+      <p>匣中镜当前最有价值的路线，是继续服务真实的创作者本人创作流程，先用接下来 3-5 个项目建立无负担质量基线。v2.1 稳定版始终保留，v2.2 只在证据明确且人工审核后才可发布。</p>
+      <div><a href="/xiangzhongjing-demo">返回匣中镜</a><a href="/xiangzhongjing-prd">查看产品 PRD</a></div>
+    </section>
+  </main>
+
+  <footer class="evaluation-footer">
+    <p>评估基于 2026-08-08 本地 Demo、源码、SQLite 运行数据、PRD 与桌面/移动端界面实测。</p>
+  </footer>
+
+  <script src="/static/evaluation.js?v=20260808b" defer></script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+/* Modular-monolith UI polish: dense work surfaces and a real mobile navigation. */
+
+h1,
+h2,
+h3,
+[id] {
+  scroll-margin-top: 24px;
+}
+
+.nav-glyph img,
+.mobile-bottom-nav img {
+  display: block;
+  flex: 0 0 auto;
+  opacity: 0.72;
+}
+
+.workspace-nav a:hover .nav-glyph img,
+.workspace-nav a.active .nav-glyph img,
+.diary-nav a:hover .nav-glyph img,
+.diary-nav a.active .nav-glyph img {
+  opacity: 1;
+}
+
+.workspace-nav a.active .nav-glyph img {
+  filter: invert(1);
+}
+
+.page-hero,
+.project-header {
+  min-height: 96px;
+  padding-top: 13px;
+  padding-bottom: 18px;
+}
+
+.page-hero::before,
+.project-header::before {
+  top: 18px;
+  bottom: 18px;
+}
+
+.page-hero h1,
+.project-header h1 {
+  font-size: 32px;
+}
+
+.mobile-bottom-nav {
+  display: none;
+}
+
+.project-card,
+.distill-version-item,
+.book-library-item {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 92px;
+}
+
+@media (max-width: 980px) and (min-width: 721px) {
+  .workspace-nav a {
+    gap: 6px;
+    padding: 0 6px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 720px) {
+  .demo-shell {
+    display: block;
+    padding: 8px 8px calc(82px + env(safe-area-inset-bottom));
+  }
+
+  .demo-sidebar {
+    display: none;
+  }
+
+  .mobile-bottom-nav {
+    position: fixed;
+    z-index: calc(var(--z-sidebar) + 10);
+    right: 8px;
+    bottom: max(8px, env(safe-area-inset-bottom));
+    left: 8px;
+    display: grid;
+    min-height: 62px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: stretch;
+    padding: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.82);
+    border-radius: 8px;
+    background: rgba(249, 251, 247, 0.94);
+    box-shadow: 0 14px 38px rgba(24, 35, 29, 0.18), inset 0 1px 0 #fff;
+    backdrop-filter: blur(20px) saturate(122%);
+    -webkit-backdrop-filter: blur(20px) saturate(122%);
+  }
+
+  .mobile-bottom-nav > a,
+  .mobile-nav-more > summary {
+    display: grid;
+    min-width: 0;
+    min-height: 52px;
+    place-items: center;
+    align-content: center;
+    gap: 3px;
+    padding: 4px 2px;
+    border: 0;
+    border-radius: 6px;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 650;
+    line-height: 1.2;
+    text-decoration: none;
+  }
+
+  .mobile-bottom-nav > a:hover,
+  .mobile-bottom-nav > a.active,
+  .mobile-nav-more > summary:hover,
+  .mobile-nav-more.active > summary,
+  .mobile-nav-more[open] > summary {
+    background: rgba(var(--jade-rgb), 0.1);
+    color: var(--ink);
+  }
+
+  .mobile-bottom-nav > a.active img,
+  .mobile-nav-more.active img {
+    opacity: 1;
+  }
+
+  .mobile-nav-more {
+    position: relative;
+    min-width: 0;
+  }
+
+  .mobile-nav-more > summary {
+    height: 100%;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .mobile-nav-more > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mobile-more-glyph {
+    min-height: 20px;
+    color: var(--ink-2);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 12px;
+  }
+
+  .mobile-nav-more > div {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 10px);
+    display: grid;
+    width: 164px;
+    gap: 3px;
+    padding: 6px;
+    overflow: hidden;
+    overscroll-behavior: contain;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: rgba(252, 253, 250, 0.98);
+    box-shadow: var(--shadow-float);
+  }
+
+  .mobile-nav-more > div a {
+    display: flex;
+    min-height: 44px;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px;
+    border-radius: 6px;
+    color: var(--ink-2);
+    font-size: 13px;
+    text-decoration: none;
+  }
+
+  .mobile-nav-more > div a:hover,
+  .mobile-nav-more > div a.active {
+    background: var(--surface-muted);
+    color: var(--ink);
+  }
+
+  .app-page,
+  .workspace {
+    padding-bottom: 28px;
+  }
+
+  .page-hero,
+  .project-header {
+    min-height: 0;
+    padding: 7px 2px 13px 14px;
+  }
+
+  .page-hero::before,
+  .project-header::before {
+    top: 9px;
+    bottom: 14px;
+  }
+
+  .page-hero h1,
+  .project-header h1 {
+    font-size: 25px;
+  }
+
+  .dialogue-workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dialogue-chat-panel {
+    width: 100%;
+    min-width: 0;
+    height: calc(100dvh - 224px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-bottom-nav,
+  .mobile-nav-more > div {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}

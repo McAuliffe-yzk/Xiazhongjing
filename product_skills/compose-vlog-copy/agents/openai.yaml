@@ -1,0 +1,4 @@
+interface:
+  display_name: "匣中镜创作编排"
+  short_description: "Orchestrate personal Vlog creation across specialist skills"
+  default_prompt: "Use -vlog-copy to turn my project materials into a complete personal Vlog draft."

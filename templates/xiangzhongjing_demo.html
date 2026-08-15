@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="匣中镜是一款面向个人 Vlog 创作者的 AI 文案创作、素材管理与风格蒸馏工作台。">
+<meta name="theme-color" content="#eef0e9">
+<title>匣中镜｜个人创作操作系统</title>
+<link rel="stylesheet" href="/static/styles/01-shell-editor.css?v=1786381200">
+<link rel="stylesheet" href="/static/styles/02-materials.css?v=1786160000">
+<link rel="stylesheet" href="/static/styles/03-dialogue.css?v=1786205400">
+<link rel="stylesheet" href="/static/styles/04-distill-library.css?v=1786160000">
+<link rel="stylesheet" href="/static/styles/05-library.css?v=1786160000">
+<link rel="stylesheet" href="/static/styles/06-overlays.css?v=1786160000">
+<link rel="stylesheet" href="/static/styles/07-theme-responsive.css?v=1786381200">
+<link rel="stylesheet" href="/static/styles/08-dialogue-v12.css?v=1786205400">
+<link rel="stylesheet" href="/static/styles/09-refinements.css?v=1786160000">
+<link rel="stylesheet" href="/static/styles/10-modular-polish.css?v=1786200000">
+<link rel="stylesheet" href="/static/styles/11-dialogue-workspace.css?v=1786392200">
+<link rel="stylesheet" href="/static/styles/12-settings-dna.css?v=1786334000">
+<link rel="stylesheet" href="/static/styles/13-covers.css?v=1786353800">
+<link rel="stylesheet" href="/static/styles/14-inspiration.css?v=1786389800">
+<link rel="stylesheet" href="/static/styles/15-cartoon-saas-theme.css?v=1786395200">
+<link rel="stylesheet" href="/static/styles/16-v3-creator-system.css?v=1786451700">
+<link rel="stylesheet" href="/static/styles/17-creator-cartoon-motion.css?v=1786551700">
+<link rel="stylesheet" href="/static/styles/18-onboarding.css?v=1786810200">
+</head>
+<body class="v3-interface">
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<div class="demo-shell">
+  <aside class="demo-sidebar">
+    <div class="demo-brand">
+      <span class="demo-brand-mark">匣</span>
+      <span>
+        <strong>匣中镜</strong>
+        <small>个人创作操作系统</small>
+      </span>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">工作台</div>
+      <nav class="workspace-nav" aria-label="主要功能">
+        <a data-page="onboarding" href="?page=onboarding"><span class="nav-glyph"><img src="/static/icons/dna.svg" alt="" width="18" height="18" aria-hidden="true"></span>开始使用</a>
+        <a class="active" data-page="workspace" href="?page=workspace" aria-current="page"><span class="nav-glyph"><img src="/static/icons/layout-dashboard.svg" alt="" width="18" height="18" aria-hidden="true"></span>创作台</a>
+        <a data-page="editor" href="?page=editor&amp;tab=copy"><span class="nav-glyph"><img src="/static/icons/file-pen-line.svg" alt="" width="18" height="18" aria-hidden="true"></span>当前项目</a>
+        <a data-page="inspiration" href="?page=inspiration"><span class="nav-glyph"><img src="/static/icons/notebook-tabs.svg" alt="" width="18" height="18" aria-hidden="true"></span>灵感匣签</a>
+        <a data-page="distill" href="?page=distill"><span class="nav-glyph"><img src="/static/icons/dna.svg" alt="" width="18" height="18" aria-hidden="true"></span>内容蒸馏</a>
+        <a data-page="library" href="?page=library"><span class="nav-glyph"><img src="/static/icons/library-big.svg" alt="" width="18" height="18" aria-hidden="true"></span>精神书库</a>
+        <a data-page="mirror" href="?page=mirror"><span class="nav-glyph"><img src="/static/icons/messages-square.svg" alt="" width="18" height="18" aria-hidden="true"></span>镜中人</a>
+        <a data-page="book-person" href="?page=book-person"><span class="nav-glyph"><img src="/static/icons/book-open-text.svg" alt="" width="18" height="18" aria-hidden="true"></span>书中人</a>
+        <a data-page="assets" href="?page=assets"><span class="nav-glyph"><img src="/static/icons/library-big.svg" alt="" width="18" height="18" aria-hidden="true"></span>资产库</a>
+        <a data-page="covers" href="?page=covers"><span class="nav-glyph"><img src="/static/icons/image.svg" alt="" width="18" height="18" aria-hidden="true"></span>封面图</a>
+        <a data-page="dna" href="?page=dna"><span class="nav-glyph"><img src="/static/icons/dna.svg" alt="" width="18" height="18" aria-hidden="true"></span>DNA 试剂</a>
+        <a data-page="settings" href="?page=settings"><span class="nav-glyph"><img src="/static/icons/layout-dashboard.svg" alt="" width="18" height="18" aria-hidden="true"></span>设置</a>
+      </nav>
+    </div>
+
+    <div class="sidebar-footer">
+      <nav class="diary-nav" aria-label="创作归档">
+        <a data-page="diary" href="?page=diary"><span class="nav-glyph"><img src="/static/icons/notebook-tabs.svg" alt="" width="18" height="18" aria-hidden="true"></span><span><strong>日记本</strong><small>已发布文案归档</small></span></a>
+      </nav>
+      <a class="product-blueprint-link" href="/xiangzhongjing-prd" aria-label="打开产品 PRD">
+        <span class="blueprint-icon"><img src="/static/icons/file-pen-line.svg" alt="" width="18" height="18" aria-hidden="true"></span>
+        <span class="blueprint-copy">
+          <strong>产品PRD</strong>
+        </span>
+        <span class="blueprint-arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="profile-tile" data-page="profile" href="?page=profile" aria-label="进入个人信息页">
+        <span class="profile-avatar" id="sidebar-profile-avatar">创</span>
+        <span>
+          <strong id="sidebar-profile-name">创作者</strong>
+          <small id="sidebar-profile-bio">个人创作者</small>
+        </span>
+        <span class="profile-state"></span>
+      </a>
+    </div>
+  </aside>
+
+  <main class="demo-main" id="main-content" tabindex="-1">
+    <header class="demo-topbar">
+      <div class="breadcrumb">
+        <span id="breadcrumb-section">创作台</span>
+        <b>/</b>
+        <strong id="breadcrumb-title">项目管理</strong>
+      </div>
+      <div class="topbar-actions">
+        <span class="save-state hidden" id="save-state" aria-live="polite">已保存</span>
+        <button class="top-action hidden" id="dialogue-context-toggle" type="button" aria-label="查看沉淀资产库" title="查看沉淀资产库">资产库</button>
+        <button class="top-action publish-diary-action hidden" id="publish-diary" type="button">发布到日记</button>
+        <button class="top-action hidden" id="save-version" type="button">保存版本</button>
+        <details class="topbar-more">
+          <summary aria-label="更多操作"><span aria-hidden="true">•••</span></summary>
+          <div>
+            <span id="mobile-save-state" aria-live="polite">已保存</span>
+            <button id="mobile-save-version" type="button">保存版本</button>
+          </div>
+        </details>
+      </div>
+    </header>
+
+    <section class="app-page module-page onboarding-page hidden" id="page-onboarding" data-page-panel="onboarding">
+      <div class="page-hero onboarding-hero">
+        <div>
+          <span class="eyebrow">CREATOR ONBOARDING · v0.3 BETA</span>
+          <h1>把匣中镜变成你的</h1>
+          <p>配置模型，导入自己的历史文案与精神书库，再完成第一篇真正属于你的创作。</p>
+        </div>
+        <div class="onboarding-progress" aria-live="polite">
+          <strong id="onboarding-progress-value">0 / 7</strong>
+          <span id="onboarding-progress-label">正在检查</span>
+        </div>
+      </div>
+      <section class="onboarding-shell">
+        <div class="onboarding-path">
+          <div class="module-section-head">
+            <div><span class="eyebrow">READINESS PATH</span><h2>七步建立个人创作系统</h2></div>
+            <button class="outline-button compact" id="refresh-onboarding" type="button">重新检查</button>
+          </div>
+          <div class="onboarding-stage-list" id="onboarding-stage-list" aria-live="polite"></div>
+        </div>
+        <aside class="onboarding-side">
+          <section>
+            <span class="eyebrow">NEXT ACTION</span>
+            <h2 id="onboarding-next-title">先连接模型</h2>
+            <p id="onboarding-next-detail">完成后，匣中镜会继续检查个人 DNA、书库和对话人格。</p>
+            <button class="top-action primary" id="onboarding-next-action" type="button">开始配置</button>
+          </section>
+          <section class="onboarding-portability">
+            <span class="eyebrow">LOCAL FIRST</span>
+            <h2>数据留在本机</h2>
+            <p>文案、DNA、书库、会话和资产统一写入本地数据目录。API Key 不进入源码与公开交付包。</p>
+            <code>python scripts/backup_xiangzhongjing.py</code>
+          </section>
+        </aside>
+      </section>
+    </section>
+
+    <section class="app-page workspace-home" id="page-workspace" data-page-panel="workspace">
+      <div class="page-hero workspace-hero">
+        <div class="workspace-hero-copy">
+          <span class="workspace-kicker"><i aria-hidden="true"></i>今天，从一条真实经历开始</span>
+          <h1>创作台</h1>
+          <p>管理所有创作项目，从主题、素材到文案版本，每个项目都保留一条完整创作路径。</p>
+        </div>
+        <button class="top-action primary workspace-new-project" id="home-new-project" type="button">
+          <img src="/static/icons/file-pen-line.svg" alt="" width="18" height="18" aria-hidden="true">
+          <span>新建项目</span>
+        </button>
+      </div>
+      <div class="workspace-stats" aria-label="项目概览">
+        <div class="workspace-stat" data-tone="blue">
+          <span class="workspace-stat-icon"><img src="/static/icons/layout-dashboard.svg" alt="" width="22" height="22" aria-hidden="true"></span>
+          <span class="workspace-stat-copy"><span>活跃项目</span><strong id="workspace-project-count">0</strong><small>持续推进中的创作</small></span>
+        </div>
+        <div class="workspace-stat" data-tone="red">
+          <span class="workspace-stat-icon"><img src="/static/icons/file-pen-line.svg" alt="" width="22" height="22" aria-hidden="true"></span>
+          <span class="workspace-stat-copy"><span>当前项目</span><strong id="workspace-active-title">等待载入</strong><small>上次离开的创作现场</small></span>
+        </div>
+        <div class="workspace-stat" data-tone="yellow">
+          <span class="workspace-stat-icon"><img src="/static/icons/notebook-tabs.svg" alt="" width="22" height="22" aria-hidden="true"></span>
+          <span class="workspace-stat-copy"><span>素材状态</span><strong id="workspace-material-state">待检查</strong><small>可直接进入文案生成</small></span>
+        </div>
+      </div>
+      <section class="project-collection" aria-labelledby="workspace-projects-title">
+        <div class="project-board-toolbar">
+          <div class="project-toolbar-copy">
+            <h2 id="workspace-projects-title">我的项目</h2>
+            <p>继续一个主题，或从新的念头开始。</p>
+          </div>
+          <div class="project-toolbar-actions">
+            <label class="project-filter-field">
+              <span class="sr-only">查找项目</span>
+              <img src="/static/icons/layout-dashboard.svg" alt="" width="17" height="17" aria-hidden="true">
+              <input id="project-filter" name="project-filter" type="search" placeholder="搜索标题或标签" autocomplete="off">
+            </label>
+            <button id="toggle-archived" type="button" aria-pressed="false">查看归档</button>
+          </div>
+        </div>
+        <div class="project-list-labels" aria-hidden="true"><span></span><span>项目</span><span>素材与进度</span><span>操作</span></div>
+        <div class="project-board" id="project-board"></div>
+      </section>
+    </section>
+
+    <section class="app-page inspiration-page hidden" id="page-inspiration" data-page-panel="inspiration">
+      <div class="page-hero inspiration-hero">
+        <div>
+          <span class="eyebrow">DAILY DRAW</span>
+          <h1>灵感匣签</h1>
+          <p>每天只能选一类签，向匣中镜问一次今天该从哪里开始。</p>
+        </div>
+        <div class="inspiration-today-state" id="inspiration-today-state">今日未抽</div>
+      </div>
+
+      <section class="inspiration-stage" aria-labelledby="inspiration-stage-title">
+        <div class="inspiration-stage-copy">
+          <span class="eyebrow">CHOOSE ONE</span>
+          <h2 id="inspiration-stage-title">先选一类签</h2>
+          <p id="inspiration-stage-desc">主题、情绪、事件、书库、镜中、行动。今天只会锁定其中一种。</p>
+        </div>
+        <div class="inspiration-box-wrap" aria-live="polite">
+          <div class="inspiration-phase" id="inspiration-phase">等待选择</div>
+          <div class="inspiration-box" id="inspiration-box" aria-hidden="true">
+            <div class="inspiration-aura"></div>
+            <div class="box-lid"></div>
+            <div class="draw-slip">
+              <span id="inspiration-slip-label">匣中镜</span>
+            </div>
+            <div class="box-body">
+              <span>匣</span>
+            </div>
+          </div>
+          <p class="inspiration-lock-note" id="inspiration-lock-note">抽签前可以切换签类，抽出后今日锁定。</p>
+        </div>
+        <div class="inspiration-picker-panel">
+          <div class="inspiration-picker-head">
+            <span>今天你缺什么？</span>
+            <strong id="inspiration-picked-label">主题签</strong>
+          </div>
+          <div class="inspiration-type-grid" id="inspiration-type-grid" aria-label="选择今日签类"></div>
+        </div>
+        <button class="top-action primary inspiration-draw-button" id="draw-inspiration" type="button">先选一类签</button>
+      </section>
+
+      <section class="inspiration-result hidden" id="inspiration-result" aria-live="polite"></section>
+
+      <section class="inspiration-history" aria-labelledby="inspiration-history-title">
+        <div class="section-heading-row">
+          <div>
+            <span class="eyebrow">PAST DRAWS</span>
+            <h2 id="inspiration-history-title">历史签记录</h2>
+          </div>
+          <div class="inspiration-history-count" id="inspiration-history-count">0 支</div>
+        </div>
+        <div class="inspiration-history-list" id="inspiration-history-list"></div>
+      </section>
+    </section>
+
+    <section class="app-page module-page hidden diary-page" id="page-diary" data-page-panel="diary">
+      <div class="page-hero diary-hero">
+        <div>
+          <span class="eyebrow">PUBLISHED JOURNAL</span>
+          <h1>日记本</h1>
+          <p>行到水穷处，坐看云起时。</p>
+        </div>
+        <div class="diary-hero-meta">
+          <strong id="diary-entry-count">0 / 100</strong>
+          <span>已记录页数</span>
+        </div>
+      </div>
+      <section class="diary-book-shell" aria-label="创作日记本">
+        <div class="diary-book-spine" aria-hidden="true">
+          <span>匣中镜</span>
+          <b>CREATOR'S JOURNAL</b>
+        </div>
+        <div class="diary-book-page">
+          <div class="diary-page-head">
+            <div>
+              <span class="eyebrow">PAGE <b id="diary-page-number">01</b> / 100</span>
+              <h2 id="diary-page-title">还没有发布记录</h2>
+            </div>
+            <div class="diary-page-actions">
+              <span class="diary-page-date" id="diary-page-date">等待第一篇作品</span>
+              <button class="outline-button compact hidden" id="delete-diary-entry" type="button">删除本页</button>
+            </div>
+          </div>
+          <div class="diary-page-rule" aria-hidden="true"></div>
+          <div class="diary-page-body" id="diary-page-body">
+            <div class="diary-empty">
+              <span class="diary-empty-mark">J</span>
+              <strong>把第一篇正式发布的文案，写进这里。</strong>
+              <p>回到当前项目，点击「发布到日记」，它会成为日记本的第 01 页。</p>
+              <button class="top-action primary" id="diary-open-workspace" type="button">返回创作台</button>
+            </div>
+          </div>
+          <div class="diary-page-foot">
+            <button class="icon-button" id="diary-prev" type="button" aria-label="上一页" title="上一页">←</button>
+            <span id="diary-page-status">空白页</span>
+            <button class="icon-button" id="diary-next" type="button" aria-label="下一页" title="下一页">→</button>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="app-page module-page hidden profile-page" id="page-profile" data-page-panel="profile">
+      <div class="page-hero profile-hero">
+        <div>
+          <span class="eyebrow">CREATOR PROFILE</span>
+          <h1>个人信息</h1>
+          <p>像个人主页一样管理创作者身份。头像、定位、栏目和视觉偏好会同步服务封面生成与全局身份资产。</p>
+        </div>
+      </div>
+      <section class="profile-home-shell">
+        <section class="creator-home-card" aria-label="创作者个人主页">
+          <div class="creator-home-accent" aria-hidden="true"></div>
+          <div class="creator-home-main">
+          <div class="creator-home-avatar" id="profile-home-avatar"><span>创</span></div>
+            <div class="creator-home-copy">
+              <div class="creator-home-title">
+                <h2 id="profile-home-name">创作者</h2>
+                <span id="profile-home-handle">@creator</span>
+              </div>
+              <p id="profile-home-bio">个人创作者</p>
+              <div class="creator-home-meta">
+                <span id="profile-home-location">未填写所在地</span>
+                <span id="profile-home-platforms">抖音 · 小红书 · B站</span>
+              </div>
+              <div class="creator-home-tags" id="profile-home-tags">
+                <span>个人表达</span><span>真实经历</span><span>持续创作</span>
+              </div>
+            </div>
+            <div class="creator-home-stats" aria-label="创作资产概览">
+              <div><strong id="profile-stat-diary">0</strong><span>日记</span></div>
+              <div><strong id="profile-stat-covers">0</strong><span>封面</span></div>
+              <div><strong id="profile-stat-books">0</strong><span>书库</span></div>
+            </div>
+          </div>
+        </section>
+        <section class="profile-layout">
+          <aside class="profile-status-panel" aria-label="个人资料状态">
+            <div class="profile-status-head">
+              <div>
+                <span class="eyebrow">PROFILE STATUS</span>
+                <h2>资料状态</h2>
+              </div>
+              <strong id="profile-completeness-value">0%</strong>
+            </div>
+            <progress id="profile-completeness" max="100" value="0">0%</progress>
+            <ul class="profile-status-list">
+              <li><span>公开资料</span><strong id="profile-public-status">待完善</strong></li>
+              <li><span>创作画像</span><strong id="profile-creator-status">待完善</strong></li>
+              <li><span>形象参考</span><strong id="profile-avatar-status">未上传</strong></li>
+            </ul>
+            <a class="outline-button profile-cover-link" data-page="covers" href="?page=covers">前往封面图</a>
+          </aside>
+          <section class="profile-edit-card">
+            <div class="profile-section-head">
+              <div>
+                <span class="eyebrow">IDENTITY SETTINGS</span>
+                <h2>资料设置</h2>
+              </div>
+              <label class="profile-avatar-upload"><span>更换头像</span><input id="cover-avatar-input" type="file" accept="image/png,image/jpeg,image/webp" aria-label="上传新的个人头像"></label>
+            </div>
+            <form id="cover-profile-form" class="cover-profile-form">
+              <fieldset class="profile-form-section">
+                <legend><span>01</span><strong>公开资料</strong></legend>
+                <div class="profile-form-grid">
+                  <label><span>展示名称</span><input name="display_name" maxlength="40" autocomplete="off"></label>
+                  <label><span>账号标识</span><input name="handle" maxlength="60" autocomplete="off" spellcheck="false"></label>
+                  <label class="profile-field-wide"><span>一句话简介</span><input name="bio" maxlength="120" autocomplete="off"></label>
+                  <label><span>生活场域</span><input name="location" maxlength="80" autocomplete="off" placeholder="例如：城市 / 校园 / 工作现场"></label>
+                  <label><span>常驻平台</span><input name="platforms" maxlength="160" autocomplete="off" placeholder="例如：抖音、小红书、B站"></label>
+                </div>
+              </fieldset>
+              <fieldset class="profile-form-section">
+                <legend><span>02</span><strong>创作画像</strong></legend>
+                <div class="profile-form-grid">
+                  <label class="profile-field-wide"><span>创作者定位</span><textarea name="creator_positioning" maxlength="240" rows="2" placeholder="例如：记录学习、工作与个人成长"></textarea></label>
+                  <label class="profile-field-wide"><span>栏目方向</span><textarea name="content_columns" maxlength="400" rows="2" placeholder="例如：生活日记、工作记录、访谈、读书与电影"></textarea></label>
+                  <label class="profile-field-wide"><span>个人风格关键词</span><textarea name="style_keywords" maxlength="240" rows="2" placeholder="例如：真诚、克制、幽默、冷静、明亮"></textarea></label>
+                </div>
+              </fieldset>
+              <fieldset class="profile-form-section">
+                <legend><span>03</span><strong>封面视觉</strong></legend>
+                <div class="profile-form-grid">
+                  <label class="profile-field-wide"><span>视觉偏好</span><textarea name="visual_preferences" maxlength="360" rows="2" placeholder="例如：红蓝点缀、人物真实、电影感、克制留白"></textarea></label>
+                  <label class="profile-field-wide"><span>画面禁忌</span><textarea name="cover_negative_prompt" maxlength="360" rows="2" placeholder="例如：夸张表情、廉价网感、文字乱码、畸形肢体"></textarea></label>
+                </div>
+              </fieldset>
+              <div class="cover-profile-actions">
+                <span id="profile-save-status" aria-live="polite">资料修改仅在保存后生效</span>
+                <button class="top-action primary" type="submit">保存修改</button>
+              </div>
+            </form>
+          </section>
+        </section>
+      </section>
+    </section>
+
+    <section class="app-page module-page hidden covers-page" id="page-covers" data-page-panel="covers">
+      <div class="page-hero covers-hero">
+        <div>
+          <span class="eyebrow">IMAGE 2.0 STUDIO</span>
+          <h1>封面图</h1>
+          <p>从项目生成栏目封面，并沉淀为可下载、可追溯的本地视觉资产。</p>
+        </div>
+      </div>
+      <section class="covers-layout">
+        <div class="cover-view-tabs" role="tablist" aria-label="封面图子页面">
+          <button class="active" data-cover-tab="assets" type="button" role="tab" aria-selected="true" aria-controls="cover-assets-view">封面资产</button>
+          <button data-cover-tab="studio" type="button" role="tab" aria-selected="false" aria-controls="cover-studio-view">生成封面</button>
+        </div>
+
+        <section class="cover-wall-panel" id="cover-assets-view" data-cover-view="assets" role="tabpanel">
+          <div class="cover-wall-head">
+            <div>
+              <span class="eyebrow">COVER ASSETS</span>
+              <h2>我的封面资产</h2>
+            </div>
+            <span id="cover-wall-count">0 张</span>
+          </div>
+          <div class="cover-wall" id="cover-wall" aria-live="polite"></div>
+        </section>
+
+        <section class="cover-studio-panel hidden" id="cover-studio-view" data-cover-view="studio" role="tabpanel">
+          <div class="cover-studio-head">
+            <div>
+              <span class="eyebrow">CREATION STUDIO</span>
+              <h2>生成封面</h2>
+            </div>
+            <button class="outline-button compact" data-cover-create-preset type="button">新建风格</button>
+          </div>
+          <div id="cover-studio-workbench" aria-live="polite"></div>
+        </section>
+      </section>
+
+      <div class="cover-preset-modal hidden" id="cover-preset-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="cover-preset-title">
+        <div class="cover-preset-dialog">
+          <div class="cover-preset-dialog-head">
+            <div>
+              <span class="eyebrow">STYLE PRESET</span>
+              <h2 id="cover-preset-title">新建封面风格</h2>
+            </div>
+            <button class="icon-button" id="cover-preset-close" type="button" aria-label="关闭新建风格窗口" title="关闭">×</button>
+          </div>
+          <form id="cover-preset-form" class="cover-preset-creator">
+            <label><span>风格名称</span><input name="name" maxlength="40" autocomplete="off" placeholder="例如：夜航电影感" required></label>
+            <label><span>风格 Prompt</span><textarea name="prompt" maxlength="1000" rows="6" placeholder="描述人物、场景、色彩、光线、构图与留白方式" required></textarea></label>
+            <div class="cover-preset-actions">
+              <button class="outline-button" id="cover-preset-cancel" type="button">取消</button>
+              <button class="top-action primary" type="submit">创建并应用</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div class="workspace app-page hidden" id="page-editor" data-page-panel="editor">
+      <section class="workspace-center">
+        <div class="project-header">
+          <div class="project-header-copy">
+            <div class="project-status"><span></span>创作中</div>
+            <div class="project-title-row">
+              <h1 id="project-title">心气</h1>
+              <button class="icon-button project-meta-edit" id="edit-project-meta" type="button" aria-label="编辑项目主题与简介" title="编辑项目主题与简介">✎</button>
+            </div>
+            <p id="project-description">找回一种能救命的东西，重新对生活产生轻盈的主动感。</p>
+            <form class="project-meta-editor hidden" id="project-meta-editor" aria-label="编辑项目信息">
+              <div class="project-meta-editor-head">
+                <strong>项目信息</strong>
+                <span>用于生成时识别主题、简介和叙事边界</span>
+              </div>
+              <label class="project-meta-field project-meta-field-title">
+                <span>项目主题</span>
+                <input id="project-theme-input" name="project-theme" type="text" autocomplete="off" maxlength="40">
+              </label>
+              <label class="project-meta-field project-meta-field-description">
+                <span>项目简介</span>
+                <textarea id="project-description-input" name="project-description" autocomplete="off" rows="3" maxlength="160"></textarea>
+              </label>
+              <div class="project-meta-editor-actions">
+                <button class="outline-button compact" id="cancel-project-meta" type="button">取消</button>
+                <button class="top-action primary" type="submit">保存</button>
+              </div>
+            </form>
+          </div>
+          <div class="project-meta">
+            <span id="project-updated">最近编辑：今天 18:42</span>
+            <span id="project-version">v0.4</span>
+          <button id="archive-project" type="button">归档项目</button>
+          </div>
+        </div>
+
+        <div class="editor-tabs" role="tablist" aria-label="项目视图">
+          <button class="editor-tab active" id="editor-tab-copy" data-editor-tab="copy" type="button" role="tab" aria-selected="true" aria-controls="editor-copy" tabindex="0">文案稿</button>
+          <button class="editor-tab" id="editor-tab-materials" data-editor-tab="materials" type="button" role="tab" aria-selected="false" aria-controls="editor-materials" tabindex="-1">创作素材</button>
+          <button class="editor-tab" id="editor-tab-versions" data-editor-tab="versions" type="button" role="tab" aria-selected="false" aria-controls="editor-versions" tabindex="-1">版本记录</button>
+        </div>
+
+        <div class="editor-panel" id="editor-copy" role="tabpanel" aria-labelledby="editor-tab-copy" tabindex="0">
+          <div class="editor-toolbar">
+            <div class="toolbar-group">
+              <span class="toolbar-label">完整文案稿</span>
+              <span class="toolbar-helper">个人风格已启用</span>
+            </div>
+            <div class="toolbar-group editor-actions">
+              <div class="generation-controls" id="generation-mode-control" role="group" aria-label="生成工具">
+                <div class="gen-mode-row" aria-label="生成模式">
+                  <span class="gen-mode-label">模式</span>
+                  <button class="active" data-generation-mode="fresh" type="button">新写</button>
+                  <button data-generation-mode="rewrite" type="button" title="仅基于当前文案与个人 DNA Skill 优化，不读取原始创作素材">改写</button>
+                </div>
+                <div class="gen-mode-row" id="narrative-mode-row" aria-label="叙事结构">
+                  <span class="gen-mode-label">叙事</span>
+                  <button class="active" data-narrative-mode="default" type="button">默认</button>
+                  <button data-narrative-mode="parallelism" type="button">排比递进</button>
+                  <button data-narrative-mode="six-stage" type="button">六段式</button>
+                  <button data-narrative-mode="contrast-first" type="button">先抑后扬</button>
+                </div>
+                <div class="gen-mode-row" id="book-quote-strategy-row" aria-label="书库金句策略">
+                  <span class="gen-mode-label">金句</span>
+                  <button data-book-quote-strategy="restrained" type="button" title="目标 1 条，避免金句过密">克制</button>
+                  <button class="active" data-book-quote-strategy="standard" type="button" title="目标 2 条，最多 3 条">标准</button>
+                  <button data-book-quote-strategy="amplified" type="button" title="目标 3 条，分别落在不同叙事功能位">增强</button>
+                </div>
+                <div class="gen-length-row generation-length-control" id="generation-length-control">
+                  <span class="gen-mode-label">字数</span>
+                  <select id="generation-length-mode" name="generation-length-mode" aria-label="生成字数策略">
+                    <option value="auto">自动</option>
+                    <option value="manual">手动上限</option>
+                  </select>
+                  <input id="generation-target-length" name="generation-target-length" type="number" min="300" max="3000" step="50" value="1200" inputmode="numeric" autocomplete="off" aria-label="字数上限" class="hidden">
+                  <span class="gen-length-unit hidden">字</span>
+                </div>
+                <div class="generation-dna-control" id="generation-dna-control" aria-label="外部博主 DNA 试剂">
+                  <span class="gen-mode-label">风味</span>
+                  <div class="generation-dna-chips" id="generation-dna-chips">
+                    <span class="generation-dna-empty">未启用外部试剂</span>
+                  </div>
+                  <button class="generation-dna-manage" id="generation-dna-manage" type="button">管理</button>
+                </div>
+              </div>
+              <button class="top-action primary generate-copy-action" id="generate-copy" type="button">生成文案稿</button>
+              <details class="ai-edit-menu">
+                <summary>AI 编辑</summary>
+                <div class="ai-edit-popover">
+                  <div class="ai-edit-section">
+                    <span class="toolbar-mini-label">全文处理</span>
+                    <button class="tool-button" data-command="shorten" type="button">收束全文</button>
+                    <button class="tool-button" data-command="more-personal" type="button">更像我</button>
+                    <button class="tool-button" data-command="rebuild-opening" type="button">重写开头</button>
+                    <button class="tool-button" id="lock-paragraph" type="button">锁定段落</button>
+                  </div>
+                  <div class="ai-edit-section selection-editor">
+                    <label for="selection-command">改写选中内容</label>
+                    <select class="rewrite-mode" id="selection-command" name="selection-command" aria-label="局部改写方式">
+                      <option value="更像我的口吻，减少 AI 味" selected>润色选中</option>
+                      <option value="收束这段，删掉重复解释">压缩选中</option>
+                      <option value="增加生活感和口语停顿，但不新增事实">加生活感</option>
+                      <option value="更克制，更有余味">更克制</option>
+                    </select>
+                    <button class="tool-button strong" id="rewrite-selection" type="button">生成改写预览</button>
+                  </div>
+                </div>
+              </details>
+            </div>
+          </div>
+          <div class="generation-diagnostics hidden" id="generation-diagnostics">
+            <div class="diag-timing hidden" id="generation-timing"></div>
+          </div>
+          <label class="sr-only" for="copy-editor">完整文案稿</label>
+          <textarea id="copy-editor" name="copy-editor" aria-label="完整文案稿" autocomplete="off" spellcheck="false"></textarea>
+          <div class="editor-footer">
+            <span id="copy-count">0 字</span>
+            <span id="generation-length-status">字数：自动</span>
+            <span id="locked-count">0 段已锁定</span>
+            <span>生成文案时同步处理书库金句</span>
+          </div>
+          <div class="style-feedback-bar">
+            <label for="style-feedback-text">这版像你吗？</label>
+            <input id="style-feedback-text" name="style-feedback" type="text" placeholder="补充具体修改意见…" autocomplete="off">
+            <button data-style-feedback="keep" type="button">保留这种写法</button>
+            <button data-style-feedback="revise" type="button">需要修正</button>
+          </div>
+        </div>
+
+        <div class="editor-panel hidden" id="editor-materials" role="tabpanel" aria-labelledby="editor-tab-materials" tabindex="0">
+          <div class="material-workbench">
+            <div class="material-undo-bar hidden" id="material-undo-bar" role="status">
+              <span id="material-undo-message">已完成修改</span>
+              <button id="undo-material-change" type="button">撤销</button>
+            </div>
+            <section class="material-draft-audit hidden" id="material-draft-audit" aria-label="成稿对照">
+              <div>
+                <span class="eyebrow">DRAFT LINK</span>
+                <strong>成稿对照</strong>
+              </div>
+              <p id="material-draft-audit-summary"></p>
+              <span id="material-draft-audit-detail"></span>
+              <button class="material-text-action" id="filter-material-audit" type="button">查看待处理</button>
+            </section>
+
+            <section class="material-board-step">
+              <div class="material-board-shell">
+                <aside class="material-group-nav" aria-label="素材分组">
+                  <div class="material-group-nav-head">
+                    <span>素材分组</span>
+                    <b id="material-total-count">0</b>
+                  </div>
+                  <nav id="material-group-navigation">
+                    <button class="active" data-material-group-tab="opening" type="button"><span>开场构想</span><b id="opening-count">0</b></button>
+                    <button data-material-group-tab="insight" type="button"><span>观点洞察</span><b id="insight-count">0</b></button>
+                    <button data-material-group-tab="daily" type="button"><span>日常细节</span><b id="daily-count">0</b></button>
+                    <button data-material-group-tab="event" type="button"><span>核心事件</span><b id="event-count">0</b></button>
+                    <button data-material-group-tab="quotes" type="button"><span>对话与原句</span><b id="quotes-count">0</b></button>
+                    <button data-material-group-tab="ending_reference" type="button"><span>收束意象</span><b id="ending-reference-count">0</b></button>
+                  </nav>
+                  <button class="material-import-entry" data-open-material-drawer="import" type="button">
+                    <span>AI 导入</span>
+                    <small>识别剪贴板文本</small>
+                  </button>
+                </aside>
+
+                <div class="material-list-pane">
+                  <header class="material-list-head">
+                    <div>
+                      <span id="material-active-kicker">DAILY MATERIAL</span>
+                      <strong id="material-active-title">日常</strong>
+                      <p id="material-active-description">细节、动作与生活切片，负责让文案落地。</p>
+                    </div>
+                    <div class="material-list-actions">
+                      <button class="material-text-action" id="toggle-material-selection" type="button" aria-pressed="false">批量管理</button>
+                      <button class="top-action generate-copy-action" data-generate-copy type="button">生成文案稿</button>
+                      <button class="top-action primary" id="add-material-current" type="button">新增日常</button>
+                    </div>
+                  </header>
+
+                  <div class="material-filter-bar" role="search" aria-label="筛选创作素材">
+                    <label class="material-search-field">
+                      <span class="sr-only">搜索素材</span>
+                      <input id="material-search" name="material-search" type="search" placeholder="搜索素材或文案证据…" autocomplete="off">
+                    </label>
+                    <label>
+                      <span class="sr-only">使用状态</span>
+                      <select id="material-status-filter" aria-label="使用状态">
+                        <option value="all">全部状态</option>
+                        <option value="stale">待重新分析</option>
+                        <option value="linked">已关联</option>
+                        <option value="unused">未采用</option>
+                        <option value="conflicted">有冲突</option>
+                      </select>
+                    </label>
+                    <button class="icon-button material-filter-clear" id="clear-material-filters" type="button" title="清除筛选" aria-label="清除筛选">↺</button>
+                  </div>
+
+                  <div class="material-selection-bar hidden" id="material-selection-bar">
+                    <span><b id="material-selected-count">0</b> 条已选</span>
+                    <select id="material-batch-priority" aria-label="批量设置优先级">
+                      <option value="">设置优先级</option>
+                      <option value="must">必用</option>
+                      <option value="optional">选用</option>
+                    </select>
+                    <button class="tool-button" id="delete-selected-materials" type="button">删除所选</button>
+                    <button class="icon-button" id="clear-material-selection" type="button" title="取消选择" aria-label="取消选择">×</button>
+                  </div>
+
+                  <div class="material-active-list" id="material-active-list"></div>
+                </div>
+              </div>
+              <textarea class="material-legacy-field" id="material-opening" hidden aria-hidden="true" tabindex="-1"></textarea>
+              <textarea class="material-legacy-field" id="material-insight" hidden aria-hidden="true" tabindex="-1"></textarea>
+              <textarea class="material-legacy-field" id="material-daily" hidden aria-hidden="true" tabindex="-1"></textarea>
+              <textarea class="material-legacy-field" id="material-event" hidden aria-hidden="true" tabindex="-1"></textarea>
+              <textarea class="material-legacy-field" id="material-quotes" hidden aria-hidden="true" tabindex="-1"></textarea>
+              <textarea class="material-legacy-field" id="material-ending-reference" hidden aria-hidden="true" tabindex="-1"></textarea>
+            </section>
+          </div>
+
+          <div class="material-drawer-backdrop hidden" id="material-drawer-backdrop" aria-hidden="true"></div>
+          <aside class="material-drawer hidden" id="material-drawer" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="material-drawer-title">
+            <header>
+              <div>
+                <span id="material-drawer-kicker">创作设置</span>
+                <strong id="material-drawer-title">创作主轴</strong>
+              </div>
+              <button class="icon-button" id="close-material-drawer" type="button" aria-label="关闭">×</button>
+            </header>
+
+            <section class="material-drawer-panel hidden" data-material-drawer-panel="import">
+              <p class="material-drawer-intro">粘贴散乱文本，AI 会先拆解预览；确认前不会写入或覆盖当前素材。</p>
+              <div class="material-import-body">
+                <label>
+                  <span>原始文本 <em>识别主题、开场、洞察、日常、事件和原句</em></span>
+                  <textarea id="clipboard-source" name="clipboard-source" autocomplete="off" spellcheck="false" placeholder="把备忘录、聊天记录或文档里的文字粘贴到这里…"></textarea>
+                </label>
+                <div class="material-import-buttons">
+                  <button class="tool-button" id="read-clipboard" type="button" aria-label="读取剪贴板">读取剪贴板</button>
+                  <button class="tool-button strong" id="parse-clipboard" type="button">AI 识别并拆解</button>
+                </div>
+                <div class="import-result hidden" id="clipboard-result"></div>
+              </div>
+            </section>
+          </aside>
+
+          <div class="material-action-popover" id="material-action-popover" role="group" aria-labelledby="material-action-title" aria-hidden="true">
+            <header>
+              <div>
+                <span>素材设置</span>
+                <strong id="material-action-title">日常 01</strong>
+              </div>
+              <button class="icon-button" id="close-material-action" type="button" aria-label="关闭素材设置">×</button>
+            </header>
+            <div class="material-action-fields">
+              <label><span>使用优先级</span><select id="material-action-priority" aria-label="使用优先级"></select></label>
+              <label><span>表达边界</span><select id="material-action-treatment" aria-label="表达边界"></select></label>
+            </div>
+            <div class="material-action-buttons">
+              <button class="icon-button" id="material-action-move-up" type="button" title="上移素材" aria-label="上移素材">↑</button>
+              <button class="icon-button" id="material-action-move-down" type="button" title="下移素材" aria-label="下移素材">↓</button>
+              <button class="material-delete-button" id="material-action-delete" type="button">删除素材</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="editor-panel hidden" id="editor-versions" role="tabpanel" aria-labelledby="editor-tab-versions" tabindex="0">
+          <div class="versions-head">
+            <div>
+              <span class="toolbar-label">版本记录</span>
+              <p>每次保存都会保留一份可回看的文案稿。</p>
+            </div>
+            <span class="version-count" id="version-count">4 个版本</span>
+          </div>
+          <div class="version-list" id="version-list"></div>
+        </div>
+      </section>
+
+      <aside class="demo-inspector">
+        <section class="inspector-card output-card">
+          <div class="inspector-head">
+            <div>
+              <span class="eyebrow">生成策略</span>
+              <h2>文案稿输出</h2>
+            </div>
+          </div>
+          <div class="strategy-row">
+            <span>文案形态</span>
+            <strong>主题型生活 Vlog</strong>
+          </div>
+          <div class="strategy-row">
+            <span>叙事方式</span>
+            <strong>事件推进 + 主题回扣</strong>
+          </div>
+      <div class="strategy-row">
+        <span>书库观点</span>
+        <strong id="selected-book-count">生成链路里自动判断</strong>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <section class="app-page module-page hidden" id="page-distill" data-page-panel="distill">
+      <div class="page-hero">
+        <div>
+          <span class="eyebrow">STYLE SKILL</span>
+          <h1>内容蒸馏</h1>
+          <p>历史文案沉淀为创作撰写 Skill，后续每次上传都会生成候选版本，审核后再发布。</p>
+        </div>
+      </div>
+      <section class="distill-workspace" id="distill">
+        <aside class="distill-corpus-panel" aria-labelledby="corpus-title">
+          <div class="module-section-head">
+            <div>
+              <span class="eyebrow">SOURCE CORPUS</span>
+              <h2 id="corpus-title">历史语料</h2>
+            </div>
+            <strong class="corpus-count"><b id="reference-count">0</b> 篇</strong>
+          </div>
+          <p>只提取成熟文案的正文表达，拍摄批注与制作标记不会进入写作规则。</p>
+          <label class="upload-reference">
+            <input id="reference-upload" name="reference-upload" type="file" accept=".docx,.pdf,.txt,.md" multiple>
+            <span>批量导入历史文案</span>
+          </label>
+          <div class="corpus-principles" aria-label="语料处理规则">
+            <span><b>01</b> 正文等权学习</span>
+            <span><b>02</b> 事实不跨项目迁移</span>
+            <span><b>03</b> 新版本审核后发布</span>
+          </div>
+        </aside>
+
+        <div class="distill-skill-panel">
+          <div class="module-section-head">
+            <div>
+              <span class="eyebrow">PERSONAL WRITING SKILL</span>
+              <h2>个人创作 Skill</h2>
+            </div>
+            <span class="active-badge" id="style-status">加载中</span>
+          </div>
+          <p class="inspector-copy">历史文案被提炼为可执行的写作规则，直接指导初稿生成，不召回或拼接旧稿片段。</p>
+          <div class="distill-stats">
+            <div><strong id="style-version">v1.0</strong><span>已发布版本</span></div>
+            <div><strong id="candidate-count">0</strong><span>待审核版本</span></div>
+          </div>
+          <div class="style-tags" aria-label="已提炼的风格特征">
+            <span>第一人称</span>
+            <span>生活细节</span>
+            <span>事件回扣</span>
+            <span>自问自答</span>
+            <span>克制升华</span>
+          </div>
+          <div class="distill-actions">
+            <button class="top-action" id="show-style" type="button">查看风格 DNA</button>
+            <button class="top-action primary skill-publish hidden" id="publish-style" type="button">发布候选 Skill</button>
+          </div>
+          <div class="distill-version-section">
+            <div class="section-caption"><strong>版本时间线</strong><span>规则、候选与发布时间</span></div>
+            <div class="distill-version-list" id="distill-version-list" aria-live="polite"></div>
+          </div>
+          <section class="quality-observation" aria-labelledby="quality-observation-title">
+            <div class="section-caption">
+              <div>
+                <span class="eyebrow">PASSIVE QUALITY TRACKING</span>
+                <strong id="quality-observation-title">真实项目观察</strong>
+              </div>
+              <span id="quality-observation-progress">0 / 5 个已发布项目</span>
+            </div>
+            <p class="quality-observation-note">生成和发布时自动记录，不需要额外填写。每个项目只记一次，3 个项目后可初判，5 个项目后冻结本轮结果。</p>
+            <div class="quality-observation-stats">
+              <div><strong id="quality-regeneration-count">—</strong><span>平均重生成</span></div>
+              <div><strong id="quality-edit-distance">—</strong><span>平均编辑距离</span></div>
+              <div><strong id="quality-creation-time">—</strong><span>首次生成至发布</span></div>
+              <div><strong id="quality-adoption-count">—</strong><span>直接/小改采用</span></div>
+            </div>
+            <div class="quality-observation-list" id="quality-observation-list" aria-live="polite">
+              <div class="quality-observation-empty">等待下一个真实项目发布后开始累计。</div>
+            </div>
+          </section>
+          <div class="style-review hidden" id="style-review"></div>
+          <div class="skill-runtime-status" aria-label="AI 服务状态">
+            <span><i id="deepseek-state"></i>DeepSeek</span>
+            <span><i class="ready"></i>本地书库</span>
+            <span id="skill-count">10 Skills</span>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="app-page module-page hidden dna-page" id="page-dna" data-page-panel="dna">
+      <div class="page-hero dna-hero">
+        <div class="dna-hero-copy">
+          <span class="dna-hero-kicker"><span><img src="/static/icons/dna.svg" alt="" width="16" height="16" aria-hidden="true"></span>可选创作风味层</span>
+          <h1><span>DNA</span> 试剂</h1>
+          <p>把其他创作者的语言风味提炼成可选试剂。你的个人 DNA 始终是主风格，外部试剂只在生成时主动勾选后生效。</p>
+        </div>
+        <div class="dna-hero-actions">
+          <div class="dna-hero-art" aria-hidden="true">
+            <span class="dna-art-track"></span>
+            <span class="dna-art-node one"></span>
+            <span class="dna-art-node two"></span>
+            <img src="/static/icons/dna.svg" alt="" width="40" height="40">
+          </div>
+          <button class="top-action primary" id="dna-new-reagent" type="button"><img src="/static/icons/dna.svg" alt="" width="17" height="17" aria-hidden="true"><span>新增试剂</span></button>
+        </div>
+      </div>
+      <section class="dna-workspace">
+        <div class="dna-toolbar">
+          <div class="dna-toolbar-title">
+            <span class="dna-toolbar-mark"><img src="/static/icons/dna.svg" alt="" width="20" height="20" aria-hidden="true"></span>
+            <span>
+            <strong>已沉淀的外部风味</strong>
+            <span id="dna-reagent-count">0 个试剂</span>
+            </span>
+          </div>
+          <label class="dna-search">
+            <span class="sr-only">搜索 DNA 试剂</span>
+            <img src="/static/icons/layout-dashboard.svg" alt="" width="16" height="16" aria-hidden="true">
+            <input id="dna-search-input" type="search" placeholder="搜索名称或标签…" autocomplete="off">
+          </label>
+        </div>
+        <div class="dna-list" id="dna-reagent-list"></div>
+      </section>
+      <div class="dna-editor hidden" id="dna-editor" role="dialog" aria-modal="true" aria-labelledby="dna-editor-title">
+        <div class="dna-editor-head">
+          <div><span class="eyebrow">DISTILL</span><h2 id="dna-editor-title">新增外部 DNA 试剂</h2></div>
+          <button class="icon-button" id="dna-editor-close" type="button" aria-label="关闭">×</button>
+        </div>
+        <form id="dna-create-form" class="dna-form">
+          <label><span>试剂名称</span><input id="dna-name" required maxlength="80" placeholder="例如：某位博主的冷静叙事"></label>
+          <label><span>样本文字</span><textarea id="dna-source-text" required minlength="300" placeholder="粘贴对方已完成的正文样本，至少 300 字"></textarea></label>
+          <label><span>备注</span><input id="dna-notes" maxlength="200" placeholder="只给自己看的说明"></label>
+          <div class="dna-form-actions"><button class="outline-button" id="dna-editor-cancel" type="button">取消</button><button class="top-action primary" type="submit">蒸馏并保存</button></div>
+        </form>
+      </div>
+    </section>
+
+    <section class="app-page module-page hidden settings-page" id="page-settings" data-page-panel="settings">
+      <div class="page-hero">
+        <div>
+          <span class="eyebrow">LOCAL CONFIGURATION</span>
+          <h1>设置</h1>
+          <p>管理本机 API、模型和产品 Skill。配置只保存在当前电脑，不会上传到云端。</p>
+        </div>
+      </div>
+      <section class="settings-workspace">
+        <form id="settings-config-form" class="settings-panel settings-provider-panel">
+          <div class="module-section-head">
+            <div>
+              <span class="eyebrow">PROVIDERS</span>
+              <h2>模型与联网服务</h2>
+            </div>
+            <span id="settings-config-state">读取中</span>
+          </div>
+          <div class="settings-provider-layout">
+            <section class="settings-provider-card primary">
+              <div class="settings-provider-card-head">
+                <div>
+                  <span>CORE MODEL</span>
+                  <strong>DeepSeek 主模型</strong>
+                  <p>负责创作、改写、蒸馏和对话，是匣中镜的核心运行服务。</p>
+                </div>
+                <button class="outline-button compact" id="settings-test-deepseek" type="button">检查</button>
+              </div>
+              <div class="settings-grid settings-grid-model">
+                <label><span>API Key</span><input name="DEEPSEEK_API_KEY" type="password" autocomplete="off" placeholder="留空则保持现有值"></label>
+                <label><span>Base URL</span><input name="DEEPSEEK_API_BASE" autocomplete="off"></label>
+                <label><span>生成模型</span><input name="DEEPSEEK_MODEL" autocomplete="off"></label>
+                <label><span>推理模型</span><input name="DEEPSEEK_REASONER_MODEL" autocomplete="off"></label>
+                <label class="settings-field-short"><span>超时（秒）</span><input name="DEEPSEEK_TIMEOUT_SECONDS" type="number" min="10" max="300"></label>
+              </div>
+            </section>
+            <section class="settings-provider-card optional">
+              <div class="settings-provider-card-head">
+                <div>
+                  <span>OPTIONAL SEARCH</span>
+                  <strong>可选联网搜索</strong>
+                  <p>仅用于书中人对话的“本轮联网补充资料”，不参与主文案生成和本地书库直引。</p>
+                </div>
+                <button class="outline-button compact" id="settings-test-tavily" type="button">检查</button>
+              </div>
+              <div class="settings-grid settings-grid-search">
+                <label><span>搜索服务 API Key</span><input name="TAVILY_API_KEY" type="password" autocomplete="off" placeholder="可选，不填则只用本地书库"></label>
+                <label><span>Base URL</span><input name="TAVILY_API_BASE" autocomplete="off"></label>
+              </div>
+            </section>
+            <section class="settings-provider-card image-provider">
+              <div class="settings-provider-card-head">
+                <div>
+                  <span>IMAGE 2.0</span>
+                  <strong>封面图生成服务</strong>
+                  <p>用于生成创作封面。密钥只保存在本机，封面图页面不会把密钥暴露给浏览器。</p>
+                </div>
+                <button class="outline-button compact" id="settings-test-image" type="button">检查</button>
+              </div>
+              <div class="settings-grid settings-grid-image">
+                <label><span>API Key</span><input name="IMAGE_API_KEY" type="password" autocomplete="off" placeholder="留空则保持现有值"></label>
+                <label><span>Base URL</span><input name="IMAGE_API_BASE" autocomplete="off"></label>
+                <label><span>图片模型</span><input name="IMAGE_MODEL" autocomplete="off"></label>
+              </div>
+            </section>
+          </div>
+          <div class="settings-actions settings-provider-actions"><span>配置只保存在本机；搜索服务属于高级可选项。</span><button class="top-action primary" type="submit">保存配置</button></div>
+        </form>
+        <section class="settings-panel">
+          <div class="module-section-head"><div><span class="eyebrow">SYSTEM SKILL REGISTRY</span><h2>系统 Skill 管理</h2></div><span id="settings-skill-count">0 个</span></div>
+          <div class="settings-dna-status" id="settings-dna-status">
+            <div>
+              <span class="settings-dna-kicker">PERSONAL DNA</span>
+              <strong>当前个人创作 DNA</strong>
+              <p>读取中。这里展示的是内容蒸馏里已发布的个人写作风格版本，不是下方系统 Skill 列表。</p>
+            </div>
+            <span>加载中</span>
+          </div>
+          <div class="settings-skill-list" id="settings-skill-list"></div>
+        </section>
+      </section>
+    </section>
+
+    <section class="app-page module-page hidden" id="page-library" data-page-panel="library">
+      <div class="page-hero">
+        <div>
+          <span class="eyebrow">SPIRITUAL LIBRARY</span>
+          <h1>精神书库</h1>
+          <p>创建并管理自己的精神书库。创作时只会从你选中的书籍与已确认原句中寻找自然植入点。</p>
+        </div>
+      </div>
+      <section class="library-workspace" id="library">
+        <aside class="library-source-panel" aria-labelledby="library-source-title">
+          <div class="module-section-head">
+            <div>
+              <span class="eyebrow">SOURCE BOOKS</span>
+              <h2 id="library-source-title">书库目录</h2>
+            </div>
+            <span class="library-state" id="library-state">0 本已接入</span>
+          </div>
+          <p>书籍作为全局精神资产保存。点击目录可决定当前项目允许调用哪些书；只有“可引用原句 · 已通过”的素材会进入生成。</p>
+          <div class="book-list" id="book-list"></div>
+        </aside>
+
+        <section class="retrieval-preview library-notes-panel" aria-labelledby="retrieval-title-label">
+          <div class="retrieval-title">
+            <div>
+              <span class="eyebrow">READING NOTES</span>
+              <h2 id="retrieval-title-label">阅读笔记资产</h2>
+            </div>
+            <div class="library-title-actions">
+              <button class="outline-button" id="view-book-library" type="button">查看书库</button>
+              <button class="top-action" id="seed-book-notes" type="button">导入已提供笔记</button>
+            </div>
+          </div>
+          <form class="book-note-upload" id="book-note-upload">
+            <label>
+              <span>归属书籍</span>
+              <select id="book-note-target" name="book_id" aria-label="阅读笔记归属书籍">
+                <option value="">新建 / 自动识别</option>
+              </select>
+            </label>
+            <label><span>书名</span><input id="book-note-title" name="title" type="text" placeholder="新书必填，已有书可留空"></label>
+            <label><span>作者</span><input id="book-note-author" name="author" type="text" placeholder="作者或整理者"></label>
+            <label class="book-note-description"><span>书籍说明</span><input name="description" type="text" placeholder="这本书主要支撑哪些思考（可选）"></label>
+            <label class="book-note-file">
+              <span>上传阅读笔记</span>
+              <input id="book-note-files" name="files" type="file" accept=".docx,.pdf,.txt,.md" multiple>
+            </label>
+            <button class="top-action primary" type="submit">沉淀到书库</button>
+          </form>
+          <div class="retrieval-direction book-note-stats" id="retrieval-list"></div>
+          <div class="book-diagnostics hidden" id="book-diagnostics" aria-live="polite"></div>
+          <div class="book-library-teaser">
+            <span class="book-library-teaser-mark">◎</span>
+            <div>
+              <strong>原句与阅读资料已分类收录</strong>
+              <p>生成只读取已通过的可引用原句；其他资料保留上下文，不会被误植入文案。</p>
+            </div>
+            <button class="material-text-action" id="view-book-library-inline" type="button">打开资料</button>
+          </div>
+        </section>
+      </section>
+      <section class="library-persona-manager" aria-labelledby="library-persona-title">
+        <div class="module-section-head">
+          <div><span class="eyebrow">BOOK PERSONA</span><h2 id="library-persona-title">从书库创建书中人</h2></div>
+          <span id="library-persona-count">0 位</span>
+        </div>
+        <div class="library-persona-layout">
+          <form class="library-persona-form" id="library-persona-form">
+            <label><span>绑定书籍</span><select id="library-persona-books" name="book_ids" multiple size="4" aria-label="选择书中人绑定书籍"></select></label>
+            <label><span>人物名称</span><input id="library-persona-name" name="name" required placeholder="例如：作者、主角或思想人格"></label>
+            <label><span>交流定位</span><input id="library-persona-description" name="description" placeholder="他擅长和你讨论什么"></label>
+            <label><span>表达气质</span><textarea id="library-persona-voice" name="voice" rows="3" placeholder="克制、直接、温厚……"></textarea></label>
+            <div><button class="outline-button" id="suggest-library-persona" type="button">自动补全</button><button class="top-action primary" type="submit">创建书中人</button></div>
+          </form>
+          <div class="library-persona-list" id="library-persona-list"></div>
+        </div>
+      </section>
+    </section>
+
+    <section class="app-page module-page hidden" id="page-dialogue" data-page-panel="mirror">
+      <div class="page-hero dialogue-hero">
+        <div>
+          <span class="eyebrow" id="dialogue-hero-kicker">MIRROR SELF</span>
+          <h1 id="dialogue-hero-title">镜中人</h1>
+          <p id="dialogue-hero-copy">和被蒸馏出来的自己开放交流。它不绑定项目，只把值得留下的念头沉淀为全局对话资产。</p>
+        </div>
+        <div class="dialogue-mode-switch hidden" role="group" aria-label="交流模式">
+          <button class="active" data-dialogue-mode="mirror" type="button">镜中人</button>
+          <button data-dialogue-mode="book" type="button">书中人</button>
+        </div>
+      </div>
+
+      <section class="dialogue-workspace" aria-label="交流舱工作区">
+        <aside class="dialogue-session-panel" aria-labelledby="dialogue-session-title">
+          <div class="dialogue-session-head">
+            <div>
+              <span class="eyebrow">CHAT LIST</span>
+              <h2 id="dialogue-session-title">会话</h2>
+              <p id="dialogue-session-caption">按最近交流排序</p>
+            </div>
+            <button class="icon-button dialogue-new-button" id="new-dialogue-session" type="button" aria-label="新建交流会话" title="新建交流会话">＋</button>
+          </div>
+          <label class="dialogue-session-search">
+            <span class="sr-only">搜索会话</span>
+            <input id="dialogue-session-search" name="dialogue-session-search" type="search" placeholder="搜索会话…" autocomplete="off">
+            <span aria-hidden="true">⌕</span>
+          </label>
+          <div class="dialogue-persona-card" id="dialogue-persona-card"></div>
+          <div class="dialogue-persona-picker hidden" id="dialogue-persona-picker" aria-label="选择书中人"></div>
+          <div class="dialogue-session-list-head">
+            <span>最近会话</span>
+          </div>
+          <div class="dialogue-session-list" id="dialogue-session-list" aria-live="polite"></div>
+          <button class="dialogue-trash-link" id="dialogue-trash-toggle" type="button">最近删除</button>
+        </aside>
+
+        <section class="dialogue-chat-panel" aria-labelledby="dialogue-chat-title">
+          <div class="dialogue-chat-head">
+            <div class="dialogue-chat-identity">
+              <span class="dialogue-avatar" id="dialogue-chat-avatar" aria-hidden="true">镜</span>
+              <div>
+              <span class="eyebrow" id="dialogue-mode-label">MIRROR SELF</span>
+              <h2 id="dialogue-chat-title">和镜中人聊一聊</h2>
+                <span class="dialogue-chat-subtitle" id="dialogue-chat-subtitle">独立交流 · 全局沉淀</span>
+              </div>
+            </div>
+            <div class="dialogue-chat-actions">
+              <span class="dialogue-project-binding" id="dialogue-project-binding">独立交流</span>
+              <button class="icon-button" id="dialogue-chat-menu" type="button" aria-label="会话操作" title="会话操作">···</button>
+            </div>
+          </div>
+          <div class="dialogue-persona-dock hidden" id="dialogue-persona-dock" aria-label="切换书中人"></div>
+          <div class="dialogue-flow" id="dialogue-flow" aria-live="polite"></div>
+          <div class="dialogue-thread" id="dialogue-thread" aria-live="polite"></div>
+          <button class="dialogue-scroll-latest hidden" id="dialogue-scroll-latest" type="button">↓ 新消息</button>
+          <form class="dialogue-composer" id="dialogue-composer">
+            <textarea id="dialogue-input" name="dialogue-input" rows="1" placeholder="随便说点什么…" autocomplete="off" aria-label="输入对话内容"></textarea>
+            <div>
+              <label class="dialogue-search-toggle">
+                <input id="dialogue-use-search" name="dialogue-use-search" type="checkbox">
+                <span>书中人按需联网</span>
+              </label>
+              <span class="dialogue-input-hint">Enter 发送 · Shift + Enter 换行</span>
+              <button class="top-action primary" id="send-dialogue" type="submit">发送</button>
+            </div>
+          </form>
+        </section>
+
+        <aside class="dialogue-context-panel hidden" id="dialogue-context-panel" aria-labelledby="dialogue-context-title">
+          <div class="module-section-head">
+            <div>
+              <span class="eyebrow">GLOBAL MEMORY</span>
+              <h2 id="dialogue-context-title">沉淀资产库</h2>
+              <p class="dialogue-context-subtitle">把对话里主动留下的念头，变成可以长期回看的个人资产。</p>
+            </div>
+            <button class="icon-button" id="dialogue-context-close" type="button" aria-label="关闭会话记忆" title="关闭">×</button>
+          </div>
+          <div class="dialogue-context-list" id="dialogue-context-list"></div>
+          <div class="dialogue-extract-panel">
+            <strong>主动沉淀</strong>
+            <p>只记录你明确点击留下的内容，不会自动修改项目。</p>
+            <div id="dialogue-extract-log" class="dialogue-extract-log"></div>
+          </div>
+          <section class="dialogue-asset-library" aria-labelledby="dialogue-asset-title">
+            <div class="dialogue-asset-head">
+              <div>
+                <strong id="dialogue-asset-title">沉淀资产库</strong>
+                <span id="dialogue-asset-summary">等待加载</span>
+              </div>
+              <button class="material-text-action" id="refresh-dialogue-assets" type="button">刷新</button>
+            </div>
+            <div class="dialogue-asset-toolbar">
+              <label class="dialogue-asset-search">
+                <span class="sr-only">搜索沉淀资产</span>
+                <input id="dialogue-asset-search" type="search" placeholder="搜索资产内容…" autocomplete="off">
+              </label>
+              <label class="dialogue-asset-filter">
+                <span class="sr-only">筛选资产类型</span>
+                <select id="dialogue-asset-type-filter" aria-label="筛选资产类型">
+                  <option value="all">全部类型</option>
+                  <option value="theme">主题念头</option>
+                  <option value="insight">观点洞察</option>
+                  <option value="daily">生活片段</option>
+                  <option value="event">事件判断</option>
+                  <option value="quote">对话金句</option>
+                  <option value="creator_belief">人设资产</option>
+                </select>
+              </label>
+            </div>
+            <div class="dialogue-asset-list" id="dialogue-asset-list" aria-live="polite"></div>
+          </section>
+        </aside>
+      </section>
+    </section>
+
+    <section class="app-page module-page hidden asset-page" id="page-assets" data-page-panel="assets">
+      <div class="page-hero asset-hero">
+        <div>
+          <span class="eyebrow">GLOBAL ASSETS</span>
+          <h1>资产库</h1>
+          <p>集中管理镜中人和书中人对话里主动沉淀下来的主题、洞察、生活片段、事件判断、金句与人设资产。</p>
+        </div>
+        <button class="top-action" id="refresh-asset-page" type="button">刷新资产</button>
+      </div>
+      <section class="asset-dashboard" aria-labelledby="asset-library-title">
+        <div class="asset-summary-grid" id="asset-summary-grid" aria-label="资产概览"></div>
+        <div class="asset-toolbar">
+          <div class="asset-scope-tabs" role="tablist" aria-label="资产来源">
+            <button class="active" data-asset-scope="all" type="button">全部</button>
+            <button data-asset-scope="mirror" type="button">镜中人</button>
+            <button data-asset-scope="book" type="button">书中人</button>
+          </div>
+          <label class="asset-page-search">
+            <span class="sr-only">搜索资产</span>
+            <input id="asset-page-search" type="search" placeholder="搜索内容、标题、来源…" autocomplete="off">
+          </label>
+          <label class="asset-page-filter">
+            <span class="sr-only">筛选资产类型</span>
+            <select id="asset-page-type-filter" aria-label="筛选资产类型">
+              <option value="all">全部类型</option>
+              <option value="theme">主题念头</option>
+              <option value="insight">观点洞察</option>
+              <option value="opening">开场句</option>
+              <option value="daily">生活片段</option>
+              <option value="event">事件判断</option>
+              <option value="quote">对话金句</option>
+              <option value="ending_reference">收束意象</option>
+              <option value="creator_belief">人设资产</option>
+            </select>
+          </label>
+          <button class="asset-clear-filter" id="clear-asset-filters" type="button">清空筛选</button>
+        </div>
+        <div class="asset-library-headline">
+          <div>
+            <h2 id="asset-library-title">沉淀素材</h2>
+            <p id="asset-page-summary">等待加载</p>
+          </div>
+          <div class="asset-page-owner" id="asset-page-owner">全部来源</div>
+        </div>
+        <div class="asset-category-board" id="asset-category-board" aria-live="polite"></div>
+      </section>
+    </section>
+  </main>
+</div>
+
+<nav class="mobile-bottom-nav" aria-label="移动端主导航">
+  <a class="active" data-page="workspace" href="?page=workspace" aria-current="page"><img src="/static/icons/layout-dashboard.svg" alt="" width="20" height="20" aria-hidden="true"><span>创作台</span></a>
+  <a data-page="editor" href="?page=editor&amp;tab=copy"><img src="/static/icons/file-pen-line.svg" alt="" width="20" height="20" aria-hidden="true"><span>当前稿</span></a>
+  <a data-page="inspiration" href="?page=inspiration"><img src="/static/icons/notebook-tabs.svg" alt="" width="20" height="20" aria-hidden="true"><span>匣签</span></a>
+  <a data-page="distill" href="?page=distill"><img src="/static/icons/dna.svg" alt="" width="20" height="20" aria-hidden="true"><span>蒸馏</span></a>
+  <details class="mobile-nav-more">
+    <summary aria-label="打开更多功能"><span class="mobile-more-glyph" aria-hidden="true">···</span><span>更多</span></summary>
+    <div>
+      <a data-page="onboarding" href="?page=onboarding"><img src="/static/icons/dna.svg" alt="" width="18" height="18" aria-hidden="true">开始使用</a>
+      <a data-page="mirror" href="?page=mirror"><img src="/static/icons/messages-square.svg" alt="" width="18" height="18" aria-hidden="true">镜中人</a>
+      <a data-page="book-person" href="?page=book-person"><img src="/static/icons/book-open-text.svg" alt="" width="18" height="18" aria-hidden="true">书中人</a>
+      <a data-page="library" href="?page=library"><img src="/static/icons/library-big.svg" alt="" width="18" height="18" aria-hidden="true">精神书库</a>
+      <a data-page="assets" href="?page=assets"><img src="/static/icons/library-big.svg" alt="" width="18" height="18" aria-hidden="true">资产库</a>
+      <a data-page="covers" href="?page=covers"><img src="/static/icons/image.svg" alt="" width="18" height="18" aria-hidden="true">封面图</a>
+      <a data-page="profile" href="?page=profile"><img src="/static/icons/user-round.svg" alt="" width="18" height="18" aria-hidden="true">个人信息</a>
+      <a data-page="diary" href="?page=diary"><img src="/static/icons/notebook-tabs.svg" alt="" width="18" height="18" aria-hidden="true">日记本</a>
+      <a data-page="dna" href="?page=dna"><img src="/static/icons/dna.svg" alt="" width="18" height="18" aria-hidden="true">DNA 试剂</a>
+      <a data-page="settings" href="?page=settings"><img src="/static/icons/layout-dashboard.svg" alt="" width="18" height="18" aria-hidden="true">设置</a>
+      <a class="mobile-prd-link" href="/xiangzhongjing-prd"><img src="/static/icons/file-pen-line.svg" alt="" width="18" height="18" aria-hidden="true">产品PRD</a>
+    </div>
+  </details>
+</nav>
+
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+<div class="dialogue-session-menu hidden" id="dialogue-session-menu" role="menu" aria-label="会话操作">
+  <button type="button" data-dialogue-session-action="rename" role="menuitem">重命名</button>
+  <button type="button" data-dialogue-session-action="pin" role="menuitem">置顶会话</button>
+  <button type="button" data-dialogue-session-action="clear" role="menuitem">清空聊天记录</button>
+  <button type="button" class="danger" data-dialogue-session-action="delete" role="menuitem">删除会话</button>
+</div>
+
+<div class="book-library-viewer hidden" id="book-library-viewer" aria-hidden="true">
+  <section class="book-library-panel" role="dialog" aria-modal="true" aria-labelledby="book-library-title">
+    <header class="book-library-head">
+      <div>
+        <span class="eyebrow">SOURCE LIBRARY</span>
+        <h2 id="book-library-title">书库资料</h2>
+        <p>查看全部源材料及质量状态。只有“可引用原句 · 已通过”会进入文案生成。</p>
+      </div>
+      <button class="icon-button" id="close-book-library" type="button" aria-label="关闭书库资料" title="关闭">×</button>
+    </header>
+    <div class="book-library-toolbar">
+      <label for="book-library-filter">查看来源</label>
+      <select id="book-library-filter" name="book-library-filter" aria-label="筛选书库来源">
+        <option value="all">全部书籍</option>
+      </select>
+      <label for="book-library-quality-filter">素材状态</label>
+      <select id="book-library-quality-filter" name="book-library-quality-filter" aria-label="筛选书库素材状态">
+        <option value="all">全部素材</option>
+        <option value="quotable" selected>可引用原句</option>
+        <option value="reference">阅读与上下文</option>
+        <option value="pending_review">待复核</option>
+        <option value="quarantined">已隔离</option>
+      </select>
+      <span id="book-library-count">0 条资料</span>
+    </div>
+    <div class="book-library-summary" id="book-library-summary"></div>
+    <div class="book-library-list" id="book-library-research-list" aria-live="polite"></div>
+    <div class="book-library-load-more-wrap">
+      <button class="outline-button hidden" id="book-library-load-more" type="button">继续加载</button>
+    </div>
+  </section>
+</div>
+
+<div class="style-audit hidden" id="style-audit" aria-hidden="true">
+  <section class="style-audit-panel" role="dialog" aria-modal="true" aria-labelledby="style-audit-title">
+    <header class="style-audit-head">
+      <div>
+        <span class="eyebrow">WRITING SKILL REVIEW</span>
+        <h2 id="style-audit-title">创作风格审核</h2>
+        <p id="style-audit-subtitle">按 1 → 2 → 3 审核规则、真实成稿与蒸馏证据；两版正文完整留存后才可发布。</p>
+      </div>
+      <button class="icon-button" id="close-style-audit" type="button" title="关闭" aria-label="关闭创作风格审核">×</button>
+    </header>
+    <div class="style-mechanism-strip" id="style-mechanism-strip"></div>
+    <div class="style-audit-tabs" role="tablist" aria-label="审核视图">
+      <button class="active" id="style-tab-rules" data-style-audit-tab="rules" type="button" role="tab" aria-selected="true" aria-controls="style-audit-body" tabindex="0">1 规则变化</button>
+      <button id="style-tab-outputs" data-style-audit-tab="outputs" type="button" role="tab" aria-selected="false" aria-controls="style-audit-body" tabindex="-1">2 成稿 A/B</button>
+      <button id="style-tab-evidence" data-style-audit-tab="evidence" type="button" role="tab" aria-selected="false" aria-controls="style-audit-body" tabindex="-1">3 证据与风险</button>
+    </div>
+    <div class="style-audit-body" id="style-audit-body" role="tabpanel" aria-live="polite"></div>
+    <footer class="style-audit-actions">
+      <span id="style-audit-decision">先完成三项审核，再决定是否发布候选版本。</span>
+      <button class="outline-button" id="rerun-style-ab" type="button">重新生成 A/B</button>
+      <button class="top-action primary" id="publish-style-audit" type="button">发布候选 Skill</button>
+    </footer>
+  </section>
+</div>
+
+<div class="edit-preview hidden" id="edit-preview" aria-hidden="true">
+  <section class="edit-preview-panel" role="dialog" aria-modal="true" aria-labelledby="edit-preview-title">
+    <div class="edit-preview-head">
+      <div>
+        <span class="eyebrow">AI EDIT PREVIEW</span>
+        <h2 id="edit-preview-title">编辑预览</h2>
+      </div>
+      <button class="icon-button" id="close-edit-preview" type="button" title="关闭" aria-label="关闭编辑预览">×</button>
+    </div>
+    <div class="edit-preview-body">
+      <p id="edit-preview-note"></p>
+      <div class="edit-preview-diagnostics hidden" id="edit-preview-diagnostics"></div>
+      <div class="opening-options hidden" id="opening-options"></div>
+      <div class="edit-compare">
+        <section class="compare-pane">
+          <div class="compare-pane-head">
+            <strong>原文</strong>
+            <span id="edit-original-count">0 字</span>
+          </div>
+          <div class="compare-original" id="edit-original-text"></div>
+        </section>
+        <section class="compare-pane">
+          <div class="compare-pane-head">
+            <strong>新稿</strong>
+            <span id="edit-preview-count">0 字</span>
+          </div>
+          <div
+            class="compare-new"
+            id="edit-preview-text"
+            contenteditable="true"
+            role="textbox"
+            aria-label="新稿"
+            aria-multiline="true"
+            spellcheck="false"
+          ></div>
+        </section>
+      </div>
+      <section class="edit-change-summary hidden" id="edit-change-summary" aria-live="polite"></section>
+    </div>
+    <div class="edit-preview-actions">
+      <span id="edit-preview-status">预览不会直接覆盖正文</span>
+      <button class="outline-button compact" id="cancel-edit-preview" type="button">取消</button>
+      <button class="top-action primary" id="accept-edit-preview" type="button">接受修改</button>
+    </div>
+  </section>
+</div>
+
+<div class="confirm-dialog hidden" id="confirm-dialog" aria-hidden="true">
+  <section class="confirm-panel" role="dialog" aria-modal="true" aria-labelledby="confirm-title" aria-describedby="confirm-message">
+    <span class="eyebrow">CONFIRM</span>
+    <h2 id="confirm-title">确认操作</h2>
+    <p id="confirm-message">这个操作需要确认。</p>
+    <div class="confirm-actions">
+      <button class="outline-button compact" id="confirm-cancel" type="button">取消</button>
+      <button class="top-action primary" id="confirm-accept" type="button">确认</button>
+    </div>
+  </section>
+</div>
+
+<div class="confirm-dialog hidden" id="dialogue-rename-dialog" aria-hidden="true">
+  <section class="confirm-panel" role="dialog" aria-modal="true" aria-labelledby="dialogue-rename-title">
+    <span class="eyebrow">SESSION TITLE</span>
+    <h2 id="dialogue-rename-title">重命名会话</h2>
+    <label class="dialogue-rename-field">
+      <span class="sr-only">会话标题</span>
+      <input id="dialogue-rename-input" name="dialogue-rename-input" type="text" maxlength="80" autocomplete="off" placeholder="输入会话标题…">
+    </label>
+    <div class="confirm-actions">
+      <button class="outline-button compact" id="dialogue-rename-cancel" type="button">取消</button>
+      <button class="top-action primary" id="dialogue-rename-accept" type="button">保存标题</button>
+    </div>
+  </section>
+</div>
+
+<script src="/static/js/api.js?v=1786160000"></script>
+<script src="/static/js/core.js?v=1786389800"></script>
+<script src="/static/js/materials.js?v=1786201600"></script>
+<script src="/static/js/workspace.js?v=1786447200"></script>
+<script src="/static/js/inspiration.js?v=1786389800"></script>
+<script src="/static/js/style.js?v=1786160000"></script>
+<script src="/static/js/generation.js?v=1786389800"></script>
+<script src="/static/js/dialogue.js?v=1786392200"></script>
+<script src="/static/js/dna.js?v=1786537200"></script>
+<script src="/static/js/settings.js?v=1786334000"></script>
+<script src="/static/js/covers.js?v=1786353800"></script>
+<script src="/static/js/onboarding.js?v=1786810200"></script>
+<script src="/static/js/events.js?v=1786447200"></script>
+</body>
+</html>
