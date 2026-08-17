@@ -110,7 +110,7 @@ def onboarding_status() -> dict[str, Any]:
     required = stages[:4]
     ready_count = sum(1 for item in stages if item["ready"])
     return {
-        "version": "0.3.0-beta",
+        "version": "0.4.1-beta",
         "ready": all(item["ready"] for item in required),
         "is_blank_install": not any((documents, books, created_projects, profile_ready)),
         "progress": {"ready": ready_count, "total": len(stages)},
@@ -124,4 +124,3 @@ def onboarding_status() -> dict[str, Any]:
             "model": app_config.deepseek_model,
         },
     }
-

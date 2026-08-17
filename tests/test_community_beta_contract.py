@@ -121,7 +121,7 @@ class CommunityBetaContractTests(unittest.TestCase):
         self.assertIn("检测到运行时创作者身份硬编码", script)
         self.assertIn("检测到超过 10MB 的异常单文件", script)
         self.assertIn('sanitize_community_package.py" "${STAGE}"', script)
-        self.assertIn('VERSION="${1:-v0.3.0-beta}"', script)
+        self.assertIn('VERSION="${1:-v0.4.1-beta}"', script)
         self.assertIn('"${VERSION#v}" > "${STAGE}/VERSION"', script)
 
 

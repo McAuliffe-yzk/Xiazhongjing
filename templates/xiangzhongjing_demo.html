@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="/static/styles/11-dialogue-workspace.css?v=1786392200">
 <link rel="stylesheet" href="/static/styles/12-settings-dna.css?v=1786334000">
 <link rel="stylesheet" href="/static/styles/13-covers.css?v=1786353800">
-<link rel="stylesheet" href="/static/styles/14-inspiration.css?v=1786389800">
+<link rel="stylesheet" href="/static/styles/14-inspiration.css?v=1786875000">
 <link rel="stylesheet" href="/static/styles/15-cartoon-saas-theme.css?v=1786395200">
 <link rel="stylesheet" href="/static/styles/16-v3-creator-system.css?v=1786451700">
 <link rel="stylesheet" href="/static/styles/17-creator-cartoon-motion.css?v=1786551700">
@@ -187,7 +187,7 @@
         <div>
           <span class="eyebrow">DAILY DRAW</span>
           <h1>灵感匣签</h1>
-          <p>每天只能选一类签，向匣中镜问一次今天该从哪里开始。</p>
+          <p>从最近的你、过去的你与影响你的内容里，抽出今天唯一的一支创作灵感。</p>
         </div>
         <div class="inspiration-today-state" id="inspiration-today-state">今日未抽</div>
       </div>
@@ -227,11 +227,38 @@
       <section class="inspiration-history" aria-labelledby="inspiration-history-title">
         <div class="section-heading-row">
           <div>
-            <span class="eyebrow">PAST DRAWS</span>
-            <h2 id="inspiration-history-title">历史签记录</h2>
+            <span class="eyebrow">INSPIRATION ARCHIVE</span>
+            <h2 id="inspiration-history-title">匣签档案</h2>
           </div>
-          <div class="inspiration-history-count" id="inspiration-history-count">0 支</div>
+          <div class="inspiration-history-meta">
+            <label>
+              <span class="sr-only">筛选签类</span>
+              <select id="inspiration-archive-type">
+                <option value="">全部签类</option>
+                <option value="theme">主题签</option>
+                <option value="emotion">情绪签</option>
+                <option value="event">事件签</option>
+                <option value="book">书库签</option>
+                <option value="mirror">镜中签</option>
+                <option value="action">行动签</option>
+              </select>
+            </label>
+            <label>
+              <span class="sr-only">筛选使用状态</span>
+              <select id="inspiration-archive-status">
+                <option value="all">全部状态</option>
+                <option value="favorite">已收藏</option>
+                <option value="unused">未使用</option>
+                <option value="converted">已转化</option>
+                <option value="useful">有启发</option>
+                <option value="not_useful">不适合我</option>
+                <option value="deleted">最近删除</option>
+              </select>
+            </label>
+            <div class="inspiration-history-count" id="inspiration-history-count">0 支</div>
+          </div>
         </div>
+        <div class="inspiration-learning-summary" id="inspiration-learning-summary" aria-live="polite"></div>
         <div class="inspiration-history-list" id="inspiration-history-list"></div>
       </section>
     </section>
@@ -1366,7 +1393,7 @@
 <script src="/static/js/core.js?v=1786389800"></script>
 <script src="/static/js/materials.js?v=1786201600"></script>
 <script src="/static/js/workspace.js?v=1786447200"></script>
-<script src="/static/js/inspiration.js?v=1786389800"></script>
+<script src="/static/js/inspiration.js?v=1786875000"></script>
 <script src="/static/js/style.js?v=1786160000"></script>
 <script src="/static/js/generation.js?v=1786389800"></script>
 <script src="/static/js/dialogue.js?v=1786392200"></script>

@@ -405,7 +405,7 @@ function switchPage(page, options = {}) {
   syncGenerationLengthControl(projects[activeProject]);
   updateWorkspaceSummary();
   if (safePage === "diary") renderDiary();
-  if (safePage === "inspiration" && typeof renderInspirationPage === "function") renderInspirationPage();
+  if (safePage === "inspiration" && typeof loadInspirationPage === "function") loadInspirationPage();
   if (safePage === "library") loadBookNotesState();
   if (safePage === "library") loadLibraryPersonas();
   if (safePage === "onboarding") loadOnboardingStatus();

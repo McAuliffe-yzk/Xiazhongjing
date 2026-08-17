@@ -256,6 +256,49 @@ _SCHEMA_MIGRATIONS: tuple[tuple[int, str, str], ...] = (
         ON book_citations(project_id, book_id, quality_status, material_type, id DESC);
         """,
     ),
+    (
+        3,
+        "daily_inspiration_engine_v1",
+        """
+        CREATE TABLE IF NOT EXISTS inspiration_draws (
+            id TEXT PRIMARY KEY,
+            creator_id TEXT NOT NULL DEFAULT 'local_creator',
+            local_date TEXT NOT NULL,
+            draw_type TEXT NOT NULL
+                CHECK (draw_type IN ('theme', 'emotion', 'event', 'book', 'mirror', 'action')),
+            status TEXT NOT NULL DEFAULT 'pending'
+                CHECK (status IN ('pending', 'completed')),
+            result_json TEXT NOT NULL DEFAULT '{}',
+            context_digest TEXT NOT NULL DEFAULT '',
+            favorited INTEGER NOT NULL DEFAULT 0,
+            conversions_json TEXT NOT NULL DEFAULT '[]',
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            completed_at TEXT,
+            deleted_at TEXT,
+            UNIQUE(creator_id, local_date)
+        );
+
+        CREATE INDEX IF NOT EXISTS idx_inspiration_draws_archive
+        ON inspiration_draws(creator_id, local_date DESC, deleted_at);
+
+        CREATE INDEX IF NOT EXISTS idx_inspiration_draws_type
+        ON inspiration_draws(creator_id, draw_type, local_date DESC);
+        """,
+    ),
+    (
+        4,
+        "daily_inspiration_feedback_v1",
+        """
+        ALTER TABLE inspiration_draws ADD COLUMN feedback_verdict TEXT NOT NULL DEFAULT '';
+        ALTER TABLE inspiration_draws ADD COLUMN feedback_reasons_json TEXT NOT NULL DEFAULT '[]';
+        ALTER TABLE inspiration_draws ADD COLUMN feedback_note TEXT NOT NULL DEFAULT '';
+        ALTER TABLE inspiration_draws ADD COLUMN feedback_at TEXT;
+
+        CREATE INDEX IF NOT EXISTS idx_inspiration_draws_feedback
+        ON inspiration_draws(creator_id, feedback_verdict, local_date DESC);
+        """,
+    ),
 )
 
 

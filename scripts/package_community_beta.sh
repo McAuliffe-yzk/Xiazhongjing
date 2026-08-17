@@ -2,11 +2,19 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-VERSION="${1:-v0.3.0-beta}"
-STAGE="${ROOT}/dist/community/xiangzhongjing-${VERSION}"
-ARCHIVE="${ROOT}/dist/community/xiangzhongjing-${VERSION}.zip"
+VERSION="${1:-v0.4.1-beta}"
+DIST_DIR="${ROOT}/dist/community"
+STAGE_ROOT="$(mktemp -d "${TMPDIR:-/tmp}/xiangzhongjing-community-${VERSION}.XXXXXX")"
+STAGE="${STAGE_ROOT}/xiangzhongjing-${VERSION}"
+ARCHIVE="${DIST_DIR}/xiangzhongjing-${VERSION}.zip"
 
-rm -rf "${STAGE}" "${ARCHIVE}"
+cleanup() {
+  rm -rf "${STAGE_ROOT}"
+}
+trap cleanup EXIT INT TERM
+
+mkdir -p "${DIST_DIR}"
+rm -f "${ARCHIVE}" "${ARCHIVE}.sha256"
 mkdir -p "${STAGE}"
 rsync -a "${ROOT}/" "${STAGE}/" \
   --exclude '.git/' \
@@ -83,6 +91,11 @@ fi
 
 if [[ -n "$(find "${STAGE}" -type f -size +10M -print -quit)" ]]; then
   echo "检测到超过 10MB 的异常单文件，可能混入备份或私有资产，已停止打包" >&2
+  exit 1
+fi
+
+if [[ -n "$(find "${STAGE}" -type f -print | rg -m1 '/[^/]+ [0-9]+(\.[^/]+)+$' || true)" ]]; then
+  echo "检测到同步冲突副本，已停止打包" >&2
   exit 1
 fi
 

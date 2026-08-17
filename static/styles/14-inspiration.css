@@ -26,7 +26,11 @@
 
 .inspiration-stage {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-areas:
+    "copy copy"
+    "box picker"
+    "box action";
+  grid-template-columns: minmax(320px, 0.9fr) minmax(460px, 1.1fr);
   align-items: center;
   gap: 18px;
   padding: 20px;
@@ -39,6 +43,7 @@
 }
 
 .inspiration-stage-copy {
+  grid-area: copy;
   display: grid;
   justify-items: center;
   align-content: start;
@@ -63,6 +68,7 @@
 }
 
 .inspiration-picker-panel {
+  grid-area: picker;
   display: grid;
   width: min(760px, 100%);
   justify-self: center;
@@ -176,6 +182,7 @@
 }
 
 .inspiration-box-wrap {
+  grid-area: box;
   display: grid;
   place-items: center;
   align-content: center;
@@ -291,18 +298,19 @@
 }
 
 .inspiration-box.is-drawing .inspiration-aura {
-  animation: auraWake 2850ms ease forwards;
+  animation: auraWake 1900ms ease forwards;
 }
 
 .inspiration-box.is-drawing .box-lid {
-  animation: openLid 720ms cubic-bezier(0.2, 0.8, 0.2, 1) 420ms forwards;
+  animation: openLid 560ms cubic-bezier(0.2, 0.8, 0.2, 1) 300ms forwards;
 }
 
 .inspiration-box.is-drawing .draw-slip {
-  animation: riseSlip 1600ms cubic-bezier(0.2, 0.86, 0.18, 1) 850ms forwards;
+  animation: riseSlip 1250ms cubic-bezier(0.2, 0.86, 0.18, 1) 540ms forwards;
 }
 
 .inspiration-draw-button {
+  grid-area: action;
   min-height: 48px;
   min-width: 160px;
   justify-self: center;
@@ -355,6 +363,15 @@
   letter-spacing: 0.04em;
 }
 
+.draw-card-tools,
+.inspiration-history-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
 .inspiration-favorite {
   min-height: 44px;
   border: 1px solid rgba(var(--accent-rgb), 0.22);
@@ -365,6 +382,20 @@
   font-size: 12px;
   padding: 0 14px;
   touch-action: manipulation;
+}
+
+.inspiration-delete {
+  min-height: 44px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0 8px;
+}
+
+.inspiration-delete:hover {
+  color: var(--red);
 }
 
 .inspiration-favorite.active {
@@ -404,6 +435,8 @@
 }
 
 .draw-question,
+.draw-why,
+.draw-scenes,
 .draw-prompts,
 .draw-quote,
 .draw-action {
@@ -416,6 +449,8 @@
 }
 
 .draw-question span,
+.draw-why > span,
+.draw-scenes > span,
 .draw-prompts > span,
 .draw-quote span,
 .draw-action span,
@@ -426,6 +461,8 @@
 }
 
 .draw-question strong,
+.draw-why p,
+.draw-scenes li,
 .draw-prompts li,
 .draw-quote p,
 .draw-action p {
@@ -433,6 +470,176 @@
   color: var(--text);
   font-size: 14px;
   line-height: 1.65;
+}
+
+.draw-scenes ul {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding: 0 0 0 18px;
+}
+
+.draw-quote small {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.inspiration-sources {
+  width: fit-content;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.inspiration-sources summary {
+  cursor: pointer;
+  font-weight: 720;
+}
+
+.inspiration-sources > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 9px;
+}
+
+.inspiration-sources span {
+  border: 1px solid rgba(32, 46, 66, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.58);
+  padding: 5px 9px;
+}
+
+.inspiration-draw-card.is-deleted {
+  opacity: 0.78;
+}
+
+.inspiration-feedback {
+  display: grid;
+  gap: 12px;
+  border-top: 1px solid rgba(32, 46, 66, 0.09);
+  padding-top: 16px;
+}
+
+.inspiration-feedback-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.inspiration-feedback-head > div:first-child {
+  display: grid;
+  gap: 3px;
+}
+
+.inspiration-feedback-head strong {
+  color: var(--text);
+  font-size: 14px;
+}
+
+.inspiration-feedback-head span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.inspiration-feedback-choice {
+  display: inline-grid;
+  grid-template-columns: repeat(2, minmax(84px, 1fr));
+  gap: 3px;
+  border: 1px solid rgba(32, 46, 66, 0.09);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 3px;
+}
+
+.inspiration-feedback-choice button {
+  min-height: 38px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 720;
+}
+
+.inspiration-feedback-choice button.active {
+  background: rgba(37, 116, 90, 0.1);
+  color: var(--green);
+}
+
+.inspiration-feedback-choice button.active.negative {
+  background: rgba(190, 48, 53, 0.09);
+  color: var(--red);
+}
+
+.inspiration-feedback-detail {
+  display: grid;
+  gap: 10px;
+}
+
+.inspiration-feedback-reasons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.inspiration-feedback-reasons label {
+  position: relative;
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  border: 1px solid rgba(32, 46, 66, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0 11px;
+}
+
+.inspiration-feedback-reasons label.selected {
+  border-color: rgba(var(--accent-rgb), 0.25);
+  background: rgba(var(--accent-rgb), 0.08);
+  color: var(--accent);
+}
+
+.inspiration-feedback-reasons input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.inspiration-feedback-note {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+}
+
+.inspiration-feedback-note input {
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.68);
+  color: var(--text);
+  font: inherit;
+  padding: 0 12px;
+}
+
+.inspiration-feedback-note button {
+  min-height: 42px;
+  border: 1px solid rgba(var(--accent-rgb), 0.2);
+  border-radius: 6px;
+  background: rgba(var(--accent-rgb), 0.09);
+  color: var(--accent);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 760;
+  padding: 0 14px;
 }
 
 .draw-prompts ol {
@@ -530,6 +737,75 @@
   background: rgba(255, 255, 255, 0.56);
 }
 
+.inspiration-history-meta select {
+  min-height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.76);
+  color: var(--text);
+  font: inherit;
+  font-size: 12px;
+  padding: 0 30px 0 10px;
+}
+
+.inspiration-learning-summary {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.72fr) minmax(0, 1.28fr);
+  align-items: center;
+  gap: 16px;
+  border-top: 1px solid rgba(32, 46, 66, 0.08);
+  border-bottom: 1px solid rgba(32, 46, 66, 0.08);
+  padding: 12px 2px;
+}
+
+.inspiration-learning-title,
+.inspiration-learning-summary > div:only-child {
+  display: grid;
+  gap: 3px;
+}
+
+.inspiration-learning-summary strong {
+  color: var(--text);
+  font-size: 13px;
+}
+
+.inspiration-learning-summary span,
+.inspiration-learning-summary dt {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.inspiration-learning-summary dl {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+}
+
+.inspiration-learning-summary dl > div {
+  display: grid;
+  gap: 2px;
+}
+
+.inspiration-learning-summary dt,
+.inspiration-learning-summary dd {
+  margin: 0;
+}
+
+.inspiration-learning-summary dd {
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 760;
+}
+
+.inspiration-history-count {
+  display: inline-flex;
+  min-width: 50px;
+  min-height: 34px;
+  align-items: center;
+  justify-content: center;
+}
+
 .section-heading-row h2 {
   margin: 4px 0 0;
   font-family: var(--display);
@@ -544,7 +820,7 @@
 .inspiration-history-item,
 .inspiration-history-empty {
   display: grid;
-  grid-template-columns: 100px minmax(140px, 0.6fr) minmax(0, 1fr);
+  grid-template-columns: 100px minmax(140px, 0.6fr) minmax(0, 1fr) 72px;
   align-items: center;
   gap: 10px;
   padding: 12px 13px;
@@ -573,9 +849,16 @@
 
 .inspiration-history-item span,
 .inspiration-history-item small,
+.inspiration-history-item em,
 .inspiration-history-empty span {
   color: var(--muted);
   font-size: 12px;
+}
+
+.inspiration-history-item em {
+  justify-self: end;
+  font-style: normal;
+  font-weight: 700;
 }
 
 .inspiration-history-item strong,
@@ -619,6 +902,10 @@
 }
 
 @media (max-width: 1080px) {
+  .inspiration-stage {
+    grid-template-columns: minmax(300px, 0.82fr) minmax(380px, 1.18fr);
+  }
+
   .inspiration-stage-copy p {
     max-width: none;
   }
@@ -639,6 +926,15 @@
     padding: 14px;
   }
 
+  .inspiration-stage {
+    grid-template-areas:
+      "copy"
+      "box"
+      "picker"
+      "action";
+    grid-template-columns: 1fr;
+  }
+
   .inspiration-stage-copy {
     justify-items: start;
     text-align: left;
@@ -648,6 +944,24 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 4px;
+  }
+
+  .section-heading-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .inspiration-history-meta {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .inspiration-history-meta label {
+    flex: 1;
+  }
+
+  .inspiration-history-meta select {
+    width: 100%;
   }
 
   .inspiration-type-grid {
@@ -667,6 +981,28 @@
     grid-template-columns: 1fr;
   }
 
+  .inspiration-feedback-head,
+  .inspiration-feedback-note {
+    align-items: stretch;
+    grid-template-columns: 1fr;
+  }
+
+  .inspiration-feedback-head {
+    display: grid;
+  }
+
+  .inspiration-feedback-choice {
+    width: 100%;
+  }
+
+  .inspiration-learning-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .inspiration-learning-summary dl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .inspiration-card-actions .top-action,
   .inspiration-card-actions select {
     width: 100%;
@@ -674,6 +1010,10 @@
 
   .inspiration-history-item {
     grid-template-columns: 1fr;
+  }
+
+  .inspiration-history-item em {
+    justify-self: start;
   }
 }
 

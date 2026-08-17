@@ -10,6 +10,7 @@ from api.covers import router as covers_router
 from api.dialogue import router as dialogue_router
 from api.dna import router as dna_router
 from api.generation import router as generation_router
+from api.inspiration import router as inspiration_router
 from api.library import router as library_router
 from api.onboarding import router as onboarding_router
 from api.pages import router as pages_router
@@ -29,7 +30,7 @@ async def lifespan(_application: FastAPI):
 def create_app() -> FastAPI:
     application = FastAPI(
         title="匣中镜 AI Vlogger Studio",
-        version="0.3.0-beta",
+        version="0.4.1-beta",
         description="服务单人真实创作流程的模块化单体应用。",
         lifespan=lifespan,
     )
@@ -39,6 +40,7 @@ def create_app() -> FastAPI:
     for router in (
         pages_router,
         generation_router,
+        inspiration_router,
         library_router,
         onboarding_router,
         dialogue_router,

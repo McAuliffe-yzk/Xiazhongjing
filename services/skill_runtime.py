@@ -38,6 +38,7 @@ SKILL_META: dict[str, dict[str, str]] = {
     "mirror-self-dialogue": {"display_name": "镜中人", "phase": "交流"},
     "book-person-dialogue": {"display_name": "书中人", "phase": "交流"},
     "summarize-dialogue-memory": {"display_name": "对话记忆摘要", "phase": "记忆"},
+    "draw-daily-inspiration": {"display_name": "每日灵感匣签", "phase": "灵感"},
     "edit-vlog-copy": {"display_name": "文案编辑", "phase": "编辑"},
     "audit-vlog-copy": {"display_name": "事实审校", "phase": "审校"},
 }

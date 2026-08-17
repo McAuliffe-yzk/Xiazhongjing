@@ -57,11 +57,13 @@ def main() -> int:
         raise SystemExit(f"stage directory does not exist: {stage}")
 
     inspiration = stage / "static" / "js" / "inspiration.js"
-    replace_required(
-        inspiration,
-        r"const inspirationBanks = \{.*?\n\};(?=\n\nfunction todayKey)",
-        lambda _match: GENERIC_INSPIRATION_BANKS,
-    )
+    inspiration_source = inspiration.read_text(encoding="utf-8")
+    if "const inspirationBanks =" in inspiration_source:
+        replace_required(
+            inspiration,
+            r"const inspirationBanks = \{.*?\n\};(?=\n\nfunction todayKey)",
+            lambda _match: GENERIC_INSPIRATION_BANKS,
+        )
 
     service = stage / "services" / "deepseek_service.py"
     replace_required(

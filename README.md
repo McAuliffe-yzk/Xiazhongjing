@@ -2,7 +2,7 @@
 
 匣中镜是一套面向单个内容创作者的本地优先 Personal Agent。它把历史文稿蒸馏为可审核的个人 DNA，用真实素材生成第一人称 Vlog 文案，并通过镜中人、书中人和长期记忆继续理解创作者。
 
-当前公开目标是 **Community Beta v0.3.0**：让新用户从一个不含维护者私有数据的空白安装出发，完成模型验证、个人 DNA、精神书库、镜中人、书中人与第一篇真实创作。
+当前公开版本是 **Community Beta v0.4.1**：让新用户从一个不含维护者私有数据的空白安装出发，完成模型验证、个人 DNA、精神书库、镜中人、书中人、每日灵感与第一篇真实创作。
 
 ## 核心能力
 
@@ -15,6 +15,8 @@
 - 镜中人长期记忆：历史原文片段、跨会话摘要和人工确认记忆
 - 可从一本或多本个人书籍创建、修改和归档书中人
 - 对话证据链与“像我 / 不像我 / 记住 / 忘掉”校准反馈
+- 基于个人 DNA、历史记忆、近期项目与有效书库的每日灵感匣签
+- 灵感有效性反馈、近 14 天转化与发布指标，以及生成耗时观测
 - 七步首次使用检查：模型、身份、DNA、书库、镜中人、书中人、首篇创作
 - 可选 Streamable HTTP MCP 服务
 
@@ -129,7 +131,7 @@ for file in static/js/*.js; do node --check "$file"; done
 从现有私人工作区生成经过排除规则检查的 Community Beta 包：
 
 ```bash
-./scripts/package_community_beta.sh v0.3.0-beta
+./scripts/package_community_beta.sh v0.4.1-beta
 ```
 
 更多说明见 [Community Beta 指南](docs/COMMUNITY_BETA.md) 和 [架构说明](docs/ARCHITECTURE.md)。
